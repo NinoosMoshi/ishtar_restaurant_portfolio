@@ -1,1 +1,132 @@
-/* You can add global styles to this file, and also import other style files */
+/*
+ * ----------------------------
+ * Common CSS
+ * ----------------------------
+ */
+
+ .menu-dropdown{
+   background-color: #343a40;
+   opacity: 0.9;
+ }
+
+
+ .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+  background-image:none !important;
+  font-size: 20px;
+}
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+  background-color:#FF6A00;
+}
+
+.menu-dropdown .dropdown-item{
+   color: #fff;
+}
+
+
+ .cart-area{
+  margin:3px;
+  overflow:hidden;
+  padding: 2px;
+  text-align: center;
+  font-weight: 500;
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  border: 1px solid #FDC949;
+}
+
+.cart-area a{
+  color: burlywood;
+  text-decoration: none;
+}
+
+.cart-area a:hover{
+  text-decoration: none;;
+  color: #FF6A00;
+  cursor: pointer;
+}
+
+.cart-area span{
+  background: #fff;
+  padding: 6px;
+  margin: 0px 0px 0px -4px;
+}
+
+
+.cart-area i{
+  padding-left: 5px;
+}
+
+
+
+.list{
+  list-style: none;
+  line-height: 60px;
+  margin: 12px 0px 12px -17px;
+  height: 620px;
+}
+
+.list ul li,i,span{
+  color: #FF6A00;
+}
+
+.list a{
+  text-decoration: none;
+}
+
+.list a:hover{
+  font-size: 20px;
+  text-decoration: none;;
+  color: #FF6A00;
+  cursor: pointer;
+}
+
+
+
+.side{
+  background-color: rgb(19, 20, 20);
+  min-height: 665px;
+  color: #fff;
+}
+
+
+.side a img{
+  margin: 12px 0px;
+}
+
+.bgimg{
+  position: relative;
+  background-image: url("assets/img/res1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+.bgimg .overlay{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: rgb(0, 0, 0, .7);
+  z-index: 0;
+}
+
+
+
+.card{
+  background-color: #343a40;
+}
+
+.card button{
+  background-color: #FF6A00;
+  border:1px solid #FF6A00;
+  color: #fff;
+}
+
+
+
+
+
+
+
