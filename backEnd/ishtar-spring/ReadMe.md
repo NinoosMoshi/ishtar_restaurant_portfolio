@@ -2,3 +2,4 @@
    relationship is : one Category has many orders,and many orders have one category.
 
 2- application.properties
+3- create Category and Order repository
