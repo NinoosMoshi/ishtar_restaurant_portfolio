@@ -1,0 +1,9 @@
+.card{
+  background-color: #343a40;
+}
+
+.card button{
+  background-color: #FF6A00;
+  border:1px solid #FF6A00;
+  color: #fff;
+}
