@@ -14,4 +14,7 @@ http://localhost:8080/api/allCategories </br></br>
 6- get all Orders <br />
 http://localhost:8080/api/allOrders  <br />
 
+................................................................................................................
 
+Angular <br />
+1- create model package and Category,Order class. <br />
