@@ -18,3 +18,11 @@ http://localhost:8080/api/allOrders  <br />
 
 Angular <br />
 1- create model package and Category,Order class. <br />
+2- create order service <br />
+3- create order component
+
+Spring <br />
+<p>add corsOrigin in the main class </p>
+
+Angular
+1- create component order-list and change design
