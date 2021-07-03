@@ -1,0 +1,27 @@
+.list{
+  list-style: none;
+  line-height: 60px;
+  margin: 12px 0px 12px -17px;
+  position: fixed;
+ }
+
+ .list ul li,i,span{
+  color: #FF6A00;
+ }
+
+ .list a{
+  text-decoration: none;
+
+ }
+
+ .list a:hover{
+  font-size: 20px;
+  text-decoration: none;;
+  color: #FF6A00;
+  cursor: pointer;
+ }
+
+
+ .list a img{
+  margin: 12px 0px;
+ }

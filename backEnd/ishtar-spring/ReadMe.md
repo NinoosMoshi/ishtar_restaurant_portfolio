@@ -24,5 +24,7 @@ Angular <br />
 Spring <br />
 <p>add corsOrigin in the main class </p>
 
-Angular
-1- create component order-list and change design
+Angular <br />
+1- create component order-list and change design <br />
+2- create component category-list <br />
+3- create service category <br />
