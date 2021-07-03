@@ -34,3 +34,8 @@ Spring <br />
 1- create method findOrderByCategoryId in orderRepository<br />
 2- create method in orderService<br />
 3- create method in orderController<br />
+
+Angular <br />
+1- create method findOrdersByCategoryId in order service<br />
+2- create method in order component<br />
+3- create routerLink and activatedRouterLink<br />

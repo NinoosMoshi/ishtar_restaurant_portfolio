@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Order } from 'src/app/model/order';
 import { OrderService } from 'src/app/services/order.service';
 
@@ -11,10 +12,25 @@ export class OrderListComponent implements OnInit {
 
   orders: Order[]=[];
 
-  constructor(private orderService: OrderService) { }
+  constructor(private orderService: OrderService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.getOrders();
+    this.activatedRoute.paramMap.subscribe(
+      () =>{
+        this.finishOrders();
+      }
+    )
+
+
+  }
+
+  finishOrders(){
+    let result = this.activatedRoute.snapshot.paramMap.has('id');
+    if(result){
+      this.getOrdersByCategoryId();
+    }else{
+      this.getOrders();
+    }
   }
 
 
@@ -23,6 +39,16 @@ export class OrderListComponent implements OnInit {
       data =>{
        this.orders = data;
     })
+  }
+
+
+  getOrdersByCategoryId(){
+    let categoryId = this.activatedRoute.snapshot.paramMap.get('id');
+    this.orderService.getOrdersByCategoryId(categoryId).subscribe(
+      data =>{
+        this.orders = data
+      }
+    )
   }
 
 
