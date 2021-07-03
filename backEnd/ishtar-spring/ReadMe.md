@@ -28,3 +28,9 @@ Angular <br />
 1- create component order-list and change design <br />
 2- create component category-list <br />
 3- create service category <br />
+4- create routes <br />
+
+Spring <br />
+1- create method findOrderByCategoryId in orderRepository<br />
+2- create method in orderService<br />
+3- create method in orderController<br />
