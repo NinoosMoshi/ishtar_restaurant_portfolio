@@ -25,13 +25,17 @@ export class OrderListComponent implements OnInit {
   }
 
   finishOrders(){
-    let result = this.activatedRoute.snapshot.paramMap.has('id');
-    if(result){
+    let result1 = this.activatedRoute.snapshot.paramMap.has('id');
+    let result2 = this.activatedRoute.snapshot.paramMap.has('key');
+    if(result1){
       this.getOrdersByCategoryId();
+    }else if(result2){
+      this.getOrdersByContainingKey();
     }else{
       this.getOrders();
     }
   }
+
 
 
   getOrders(){
@@ -45,6 +49,15 @@ export class OrderListComponent implements OnInit {
   getOrdersByCategoryId(){
     let categoryId = this.activatedRoute.snapshot.paramMap.get('id');
     this.orderService.getOrdersByCategoryId(categoryId).subscribe(
+      data =>{
+        this.orders = data
+      }
+    )
+  }
+
+  getOrdersByContainingKey() {
+    let keyword = this.activatedRoute.snapshot.paramMap.get('key');
+    this.orderService.getOrdersByKey(keyword).subscribe(
       data =>{
         this.orders = data
       }
