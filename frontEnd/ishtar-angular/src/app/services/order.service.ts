@@ -28,4 +28,12 @@ export class OrderService {
   }
 
 
+   // http://localhost:8080/api/order-key?key={word}
+   getOrdersByKey(word:any):Observable<Order[]>{
+    return this.http.get<Order[]>(`${this.baseUrl}/order-key?key=${word}`).pipe(
+      map(response => response)
+    )
+ }
+
+
 }

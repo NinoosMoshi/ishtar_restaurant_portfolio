@@ -7,13 +7,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { OrderListComponent } from './components/order-list/order-list.component';
 import { CategoryListComponent } from './components/category-list/category-list.component';
 import { DropdownMenuComponent } from './components/dropdown-menu/dropdown-menu.component';
+import { SearchOrderComponent } from './components/search-order/search-order.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     OrderListComponent,
     CategoryListComponent,
-    DropdownMenuComponent
+    DropdownMenuComponent,
+    SearchOrderComponent
   ],
   imports: [
     BrowserModule,

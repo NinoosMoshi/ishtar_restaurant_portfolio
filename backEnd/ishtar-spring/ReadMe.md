@@ -31,6 +31,7 @@ Angular <br />
 4- create routes <br />
 
 Spring <br />
+![Getting Started](./img/findByCategory.png)
 1- create method findOrderByCategoryId in orderRepository<br />
 2- create method in orderService<br />
 3- create method in orderController<br />
@@ -39,3 +40,15 @@ Angular <br />
 1- create method findOrdersByCategoryId in order service<br />
 2- create method in order component<br />
 3- create routerLink and activatedRouterLink<br />
+4- create dropdown-menu component<br />
+
+Spring<br />
+1- create <span style="color:green;">findOrderByOrderNameContaining</span> in order repository.<br />
+2- create <span style="color:green;">getOrdersByKey</span> in order service.<br />
+3- create <span style="color:green;">getOrderByKey</span> in order controller.<br />
+4- test <span style="color:blue;">http://localhost:8080/api/order-key?key=f </span> <br />
+
+Angular
+1- write path in app-routing.module.ts <br />
+2- create getOrdersByKey in order service <br />
+3- create search component
