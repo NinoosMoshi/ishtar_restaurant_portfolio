@@ -26,7 +26,12 @@
   margin: 12px 0px;
  }
 
- .active {
-  background-color: #C9E265;
 
+
+
+li.active{
+  border: none;
+  width: 183px;
+  background-color: #343a40;
 }
+

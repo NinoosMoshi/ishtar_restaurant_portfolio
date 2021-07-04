@@ -1,14 +1,16 @@
 <ul class="list">
-  <li><a><img src="assets/img/ishtar2.png" style="width:40%"></a></li>
+  <li routerLinkActive="active"><a><img src="assets/img/ishtar2.png" style="width:40%"></a></li>
   <li routerLinkActive="active"><a href="#"><i class="fas fa-home p-1"></i><span>Home</span></a></li>
 
   <li *ngFor="let temp of categories" routerLinkActive="active">
     <a routerLink="category/{{temp.id}}" ><i class="{{temp.categoryLogo}} p-1"></i><span>{{temp.categoryName}}</span></a>
   </li>
+</ul>
 
-  <!-- <li><a href="#"><i class="fas fa-hamburger p-1"></i><span>Hamburger</span></a></li>
+
+
+
+
+<!-- <li><a href="#"><i class="fas fa-hamburger p-1"></i><span>Hamburger</span></a></li>
   <li><a href="#"><i class="fas fa-cocktail p-1"></i><span>Cold Drink</span></a></li>
   <li><a href="#"><i class="fas fa-mug-hot p-1"></i><span>Hot Drink</span></a></li> -->
-
-
-</ul>

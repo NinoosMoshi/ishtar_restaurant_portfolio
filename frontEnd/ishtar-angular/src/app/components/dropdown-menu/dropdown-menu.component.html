@@ -1,0 +1,23 @@
+<li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Menu
+  </a>
+  <ul class="dropdown-menu menu-dropdown" aria-labelledby="navbarDropdown">
+
+    <li>
+      <a *ngFor="let temp of categories" class="dropdown-item" routerLink="category/{{temp.id}}">
+        <i class="{{temp.categoryLogo}} p-1"></i>
+        {{temp.categoryName}}
+      </a>
+    </li>
+
+
+  </ul>
+</li>
+
+
+
+<!-- <li><a class="dropdown-item" href="#">Home</a></li>
+    <li><a class="dropdown-item" href="#">Hamburger</a></li>
+    <li><a class="dropdown-item" href="#">Cold Drink</a></li>
+    <li><a class="dropdown-item" href="#">Hot Drink</a></li> -->
