@@ -51,4 +51,13 @@ Spring<br />
 Angular
 1- write path in app-routing.module.ts <br />
 2- create getOrdersByKey in order service <br />
-3- create search component
+3- create search component <br />
+
+Angular<br />
+1- create order-detail component <br />
+
+Spring<br />
+![Getting Started](./img/findByOrderId.png) <br />
+1- create <span style="color:green;">getOrder</span> in order service<br />
+2- create <span style="color:green;">getOrderById</span> in order controller<br />
+3- <span style="color:blue;">http://localhost:8080/api/order?id=3 </span><br />

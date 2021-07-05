@@ -30,4 +30,17 @@ public class OrderService {
         return orderRepository.findOrderByOrderNameContaining(key);
     }
 
+    public Order getOrder(Long id){
+       return orderRepository.findById(id).get();
+    }
+
 }
+
+
+
+
+
+
+
+
+

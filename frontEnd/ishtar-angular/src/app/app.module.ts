@@ -8,6 +8,7 @@ import { OrderListComponent } from './components/order-list/order-list.component
 import { CategoryListComponent } from './components/category-list/category-list.component';
 import { DropdownMenuComponent } from './components/dropdown-menu/dropdown-menu.component';
 import { SearchOrderComponent } from './components/search-order/search-order.component';
+import { OrderDetailsComponent } from './components/order-details/order-details.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { SearchOrderComponent } from './components/search-order/search-order.com
     OrderListComponent,
     CategoryListComponent,
     DropdownMenuComponent,
-    SearchOrderComponent
+    SearchOrderComponent,
+    OrderDetailsComponent
   ],
   imports: [
     BrowserModule,
