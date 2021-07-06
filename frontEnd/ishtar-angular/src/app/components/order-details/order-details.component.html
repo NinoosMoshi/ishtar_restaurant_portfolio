@@ -7,7 +7,7 @@
         <a><img src="{{order.image}}" style="width: 100%;" height="133"></a>
         <div class="card-body">
           <a><h5 class="card-title">{{order.orderName}}</h5></a>
-          <p class="price">{{order.price| currency:'USD'}}</p>
+          <p class="price">{{order.price | currency:'USD'}}</p>
           <p class="card-text">{{order.description}}</p>
           <i routerLink="/order" class="fas fa-undo backword"></i><button>Add to Cart</button>
         </div>
