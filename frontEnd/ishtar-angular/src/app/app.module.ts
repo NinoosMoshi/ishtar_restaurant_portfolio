@@ -9,6 +9,7 @@ import { CategoryListComponent } from './components/category-list/category-list.
 import { DropdownMenuComponent } from './components/dropdown-menu/dropdown-menu.component';
 import { SearchOrderComponent } from './components/search-order/search-order.component';
 import { OrderDetailsComponent } from './components/order-details/order-details.component';
+import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { OrderDetailsComponent } from './components/order-details/order-details.
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

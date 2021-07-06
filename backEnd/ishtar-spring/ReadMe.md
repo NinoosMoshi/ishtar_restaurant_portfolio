@@ -64,8 +64,17 @@ Spring<br />
 
 Angular<br />
 1- create <span style="color:green;">getOrderById</span> in orderService.<br />
-2- create <span style="color:green;">getOrderByOrderId</span> in order component</br />
+2- create <span style="color:green;">getOrderByOrderId</span>in order component</br />
 3- get order in order-details.html component<br />
+
+Angular<br/>
+<h2>pagination</h2> <br/>
+1- to add pagination into bootstrap(for angular9 and up) we have to use <span style="color:gray;">ng add @angular/localize</span><br />
+2- add also <span style="color:gray;">npm install @ng-bootstrap/ng-bootstrap</span><br />
+3- in app.module.ts in import section add <span style="color:gray;">NgbPaginationModule</span><br />
+
+![Getting Started](./img/pagination.png) <br />
+
 
 
 

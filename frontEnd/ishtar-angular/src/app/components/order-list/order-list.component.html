@@ -1,6 +1,5 @@
 
 <div class="row">
-
   <div *ngFor="let temp of orders" class="col-lg-3 col-md-4 mt-3 mb-3">
     <div class="card text-center text-white">
       <a routerLink="/order/{{temp.id}}"><img src="{{temp.image}}" style="width: 100%;" height="133"></a>
@@ -10,12 +9,36 @@
         <button>Add to Cart</button>
       </div>
     </div>
-
   </div>
 
+  <!-- Start Pagination -->
+  <div class="pag ">
+    <!-- pageSize: how many order-item will be in one page
+         collectionSize: the total number of orders -->
+   <ngb-pagination
+      [(page)]="page"
+      [pageSize]="5"
+      [collectionSize]="30"
+      (pageChange)="doing()"
+   >
+   </ngb-pagination>
+
+   <!-- <div class="sel">
+    <span class="mr-2">Page Size</span>
+    <select (change)="onPageSize($event)">
+      <option>2</option>
+      <option>5</option>
+      <option selected="true">10</option>
+      <option>20</option>
+      <option>50</option>
+    </select>
+  </div> -->
 
 
-</div>
+  </div>
+  <!-- End Pagination -->
+
+</div> <!-- End row -->
 
 
 

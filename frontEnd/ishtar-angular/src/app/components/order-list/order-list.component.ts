@@ -10,6 +10,7 @@ import { OrderService } from 'src/app/services/order.service';
 })
 export class OrderListComponent implements OnInit {
 
+  page: number = 1;
   orders: Order[]=[];
 
   constructor(private orderService: OrderService, private activatedRoute: ActivatedRoute) { }
@@ -62,6 +63,13 @@ export class OrderListComponent implements OnInit {
         this.orders = data
       }
     )
+  }
+
+
+
+
+  doing(){
+    console.log(this.page)
   }
 
 
