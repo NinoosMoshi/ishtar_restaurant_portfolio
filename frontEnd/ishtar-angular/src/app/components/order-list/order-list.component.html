@@ -3,13 +3,14 @@
 
   <div *ngFor="let temp of orders" class="col-lg-3 col-md-4 mt-3 mb-3">
     <div class="card text-center text-white">
-      <a><img src="{{temp.image}}" style="width: 100%;" height="133"></a>
+      <a routerLink="/order/{{temp.id}}"><img src="{{temp.image}}" style="width: 100%;" height="133"></a>
       <div class="card-body">
-        <a><h5 class="card-title">{{temp.orderName}}</h5></a>
-        <p class="price">{{temp.price | currency:'USD'}}</p>
+       <h5 class="card-title">{{temp.orderName}}</h5>
+       <p class="price">{{temp.price | currency:'USD'}}</p>
         <button>Add to Cart</button>
       </div>
     </div>
+
   </div>
 
 

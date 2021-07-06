@@ -1,13 +1,12 @@
 export class Order {
 
-  id:number | undefined;
-  orderName:string | undefined;
-  price:number | undefined
-  image:string | undefined;
-  description:string | undefined;
-  dateCreated:Date | undefined;
-  dateUpdated:Date | undefined;
-
+  id!: number;
+  orderName!: string;
+  price!: number;
+  image!: string;
+  description!: string;
+  dateCreated!: Date;
+  dateUpdated!: Date;
 
 
 

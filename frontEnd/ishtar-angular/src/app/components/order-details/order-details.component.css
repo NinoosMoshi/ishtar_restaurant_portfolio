@@ -1,0 +1,16 @@
+.card{
+  background-color: #343a40;
+  border: 1px solid black;
+  margin-top: 150px;
+
+ }
+
+ .card button{
+  background-color: #FF6A00;
+  border:1px solid #FF6A00;
+  color: #fff;
+ }
+
+.backword{
+  float: left;
+}

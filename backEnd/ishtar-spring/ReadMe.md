@@ -61,3 +61,11 @@ Spring<br />
 1- create <span style="color:green;">getOrder</span> in order service<br />
 2- create <span style="color:green;">getOrderById</span> in order controller<br />
 3- <span style="color:blue;">http://localhost:8080/api/order?id=3 </span><br />
+
+Angular<br />
+1- create <span style="color:green;">getOrderById</span> in orderService.<br />
+2- create <span style="color:green;">getOrderByOrderId</span> in order component</br />
+3- get order in order-details.html component<br />
+
+
+
