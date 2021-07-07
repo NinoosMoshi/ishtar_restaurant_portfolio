@@ -23,22 +23,29 @@ public class OrderController {
 
 
     // http://localhost:8080/api/allOrders
+//    @GetMapping("/allOrders")
+//    public List<Order> getOrders(){
+//        return orderService.allOrders();
+//    }
+
+    // http://localhost:8080/api/allOrders?page={value}&size={value}
     @GetMapping("/allOrders")
-    public List<Order> getOrders(){
-        return orderService.allOrders();
+    public List<Order> getOrders(@RequestParam int page, @RequestParam int size){
+        return orderService.allOrders(page,size);
     }
 
 
-    // http://localhost:8080/api/category?id={value}
+
+    // http://localhost:8080/api/category?id={value}&page={value}&size={value}
     @GetMapping("/category")
-    public List<Order> getAllOrderByCategoryId(@RequestParam Long id){
-        return orderService.getOrdersByCategoryId(id);
+    public List<Order> getAllOrderByCategoryId(@RequestParam Long id,@RequestParam int page, @RequestParam int size){
+        return orderService.getOrdersByCategoryId(id,page,size);
     }
 
-    // http://localhost:8080/api/order-key?key={value}
+    // http://localhost:8080/api/order-key?key={value}&page={value}&size={value}
     @GetMapping("/order-key")
-    public List<Order> getOrderByKey(@RequestParam String key){
-       return orderService.getOrdersByKey(key);
+    public List<Order> getOrderByKey(@RequestParam String key,@RequestParam int page, @RequestParam int size){
+       return orderService.getOrdersByKey(key,page,size);
     }
 
 

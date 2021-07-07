@@ -75,6 +75,11 @@ Angular<br/>
 
 ![Getting Started](./img/pagination.png) <br />
 
+Spring<br />
+1- apply Pageable to the methods in controller,service,repository.<br />
+![Getting Started](./img/spring-controller.png) <br />
+![Getting Started](./img/spring-service&repository.png) <br />
+
 
 
 
