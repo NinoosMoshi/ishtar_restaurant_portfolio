@@ -11,6 +11,8 @@ import { OrderService } from 'src/app/services/order.service';
 export class OrderListComponent implements OnInit {
 
   page: number = 1;
+  pageLength: number = 10;  // pageSize
+  totalOrder:number = 30;  // collectionSize, the total number of orders
   orders: Order[]=[];
 
   constructor(private orderService: OrderService, private activatedRoute: ActivatedRoute) { }
@@ -40,7 +42,7 @@ export class OrderListComponent implements OnInit {
 
 
   getOrders(){
-    this.orderService.getAllOrders().subscribe(
+    this.orderService.getAllOrders(this.page - 1,this.pageLength).subscribe(
       data =>{
        this.orders = data;
     })
@@ -49,7 +51,7 @@ export class OrderListComponent implements OnInit {
 
   getOrdersByCategoryId(){
     let categoryId = this.activatedRoute.snapshot.paramMap.get('id');
-    this.orderService.getOrdersByCategoryId(categoryId).subscribe(
+    this.orderService.getOrdersByCategoryId(categoryId,this.page - 1,this.pageLength).subscribe(
       data =>{
         this.orders = data
       }
@@ -58,7 +60,7 @@ export class OrderListComponent implements OnInit {
 
   getOrdersByContainingKey() {
     let keyword = this.activatedRoute.snapshot.paramMap.get('key');
-    this.orderService.getOrdersByKey(keyword).subscribe(
+    this.orderService.getOrdersByKey(keyword,this.page - 1,this.pageLength).subscribe(
       data =>{
         this.orders = data
       }
@@ -69,7 +71,7 @@ export class OrderListComponent implements OnInit {
 
 
   doing(){
-    console.log(this.page)
+    this.finishOrders();
   }
 
 

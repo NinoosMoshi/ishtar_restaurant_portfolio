@@ -13,24 +13,24 @@ export class OrderService {
 
   constructor(private http: HttpClient) { }
 
-  // http://localhost:8080/api/allOrders
-  getAllOrders(): Observable<Order[]>{
-   return this.http.get<Order[]>(`${this.baseUrl}/allOrders`).pipe(
+  // http://localhost:8080/api/allOrders?page={value}&size={value}
+  getAllOrders(page:any, size:any): Observable<Order[]>{
+   return this.http.get<Order[]>(`${this.baseUrl}/allOrders?page=${page}&size=${size}`).pipe(
      map( response => response)
    );
   }
 
-  // http://localhost:8080/api/category?id={value}
-  getOrdersByCategoryId(id:any):Observable<Order[]>{
-     return this.http.get<Order[]>(`${this.baseUrl}/category?id=${id}`).pipe(
+  // http://localhost:8080/api/category?id={value}&page={value}&size={value}
+  getOrdersByCategoryId(id:any, page:any, size:any):Observable<Order[]>{
+     return this.http.get<Order[]>(`${this.baseUrl}/category?id=${id}&page=${page}&size=${size}`).pipe(
        map(response => response)
      )
   }
 
 
-   // http://localhost:8080/api/order-key?key={word}
-   getOrdersByKey(word:any):Observable<Order[]>{
-    return this.http.get<Order[]>(`${this.baseUrl}/order-key?key=${word}`).pipe(
+   // http://localhost:8080/api/order-key?key={word}&page={value}&size={value}
+   getOrdersByKey(word:any, page:any, size:any):Observable<Order[]>{
+    return this.http.get<Order[]>(`${this.baseUrl}/order-key?key=${word}&page=${page}&size=${size}`).pipe(
       map(response => response)
     )
  }

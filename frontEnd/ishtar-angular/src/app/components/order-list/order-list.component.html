@@ -17,8 +17,8 @@
          collectionSize: the total number of orders -->
    <ngb-pagination
       [(page)]="page"
-      [pageSize]="5"
-      [collectionSize]="30"
+      [pageSize]="pageLength"
+      [collectionSize]="totalOrder"
       (pageChange)="doing()"
    >
    </ngb-pagination>

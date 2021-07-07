@@ -80,6 +80,10 @@ Spring<br />
 ![Getting Started](./img/spring-controller.png) <br />
 ![Getting Started](./img/spring-service&repository.png) <br />
 
+Angular<br/>
+1- change method's path, to add page and size in orderService.<br/>
+2-
+
 
 
 
