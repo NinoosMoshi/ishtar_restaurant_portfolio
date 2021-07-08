@@ -82,7 +82,8 @@ Spring<br />
 
 Angular<br/>
 1- change method's path, to add page and size in orderService.<br/>
-2-
+![Getting Started](./img/pageExplain.png) <br />
+![Getting Started](./img/getSizeOfOrders.png) <br />
 
 
 
