@@ -11,7 +11,7 @@ import { OrderService } from 'src/app/services/order.service';
 export class OrderListComponent implements OnInit {
 
   page: number = 1;
-  pageLength: number = 5;  // pageSize
+  pageLength: number = 6;  // pageSize
   totalOrder:number = 0;  // collectionSize, the total number of orders
   orders: Order[]=[];
 
@@ -42,6 +42,11 @@ export class OrderListComponent implements OnInit {
 
 
   getOrders(){
+    this.orderService.getOrdersLength().subscribe(
+      data =>{
+        this.totalOrder = data
+      }
+    )
     this.orderService.getAllOrders(this.page - 1,this.pageLength).subscribe(
       data =>{
        this.orders = data;
@@ -82,6 +87,11 @@ export class OrderListComponent implements OnInit {
 
   doing(){
     this.finishOrders();
+  }
+
+  pageSize(event: Event){
+     this.pageLength = +(<HTMLInputElement>event.target).value
+     this.finishOrders();
   }
 
 

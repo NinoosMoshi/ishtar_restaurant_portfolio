@@ -86,5 +86,8 @@ Angular<br/>
 ![Getting Started](./img/getSizeOfOrders.png) <br />
 
 
-
+Angular<br />
+1- [maxSize]="3"  its mean size of pagination<br/>
+2-[boundaryLinks]="true" it's the arrow to go first or last<br/>
+3- create size for pagination <br/>
 
