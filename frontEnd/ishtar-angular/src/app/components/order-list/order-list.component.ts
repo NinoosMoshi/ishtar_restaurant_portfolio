@@ -11,8 +11,8 @@ import { OrderService } from 'src/app/services/order.service';
 export class OrderListComponent implements OnInit {
 
   page: number = 1;
-  pageLength: number = 10;  // pageSize
-  totalOrder:number = 30;  // collectionSize, the total number of orders
+  pageLength: number = 5;  // pageSize
+  totalOrder:number = 0;  // collectionSize, the total number of orders
   orders: Order[]=[];
 
   constructor(private orderService: OrderService, private activatedRoute: ActivatedRoute) { }
@@ -51,6 +51,11 @@ export class OrderListComponent implements OnInit {
 
   getOrdersByCategoryId(){
     let categoryId = this.activatedRoute.snapshot.paramMap.get('id');
+    this.orderService.getOrdersLengthByCategoryId(categoryId).subscribe(
+      data =>{
+        this.totalOrder = data
+      }
+    )
     this.orderService.getOrdersByCategoryId(categoryId,this.page - 1,this.pageLength).subscribe(
       data =>{
         this.orders = data
@@ -60,6 +65,11 @@ export class OrderListComponent implements OnInit {
 
   getOrdersByContainingKey() {
     let keyword = this.activatedRoute.snapshot.paramMap.get('key');
+    this.orderService.getOrdersLengthByKeywordSearch(keyword).subscribe(
+      data =>{
+        this.totalOrder = data
+      }
+    )
     this.orderService.getOrdersByKey(keyword,this.page - 1,this.pageLength).subscribe(
       data =>{
         this.orders = data

@@ -57,7 +57,7 @@ getOrdersLengthByCategoryId(id:any):Observable<number>{
 }
 
 
-getOrdersLengthByKeywordSearch(key:string):Observable<number>{
+getOrdersLengthByKeywordSearch(key:any):Observable<number>{
   return this.http.get<number>(`${this.baseUrl}/key-size?key=${key}`)
 }
 
