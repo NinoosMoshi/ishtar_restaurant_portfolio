@@ -27,38 +27,7 @@ background-color:#FF6A00;
 }
 
 
-.cart-area{
-margin:3px;
-overflow:hidden;
-padding: 2px;
-text-align: center;
-font-weight: 500;
-display: inline-block;
-color: #fff;
-text-decoration: none;
-border: 1px solid #FDC949;
-}
 
-.cart-area a{
-color: #FF6A00;
-text-decoration: none;
-}
-
-.cart-area a:hover{
-text-decoration: none;
-cursor: pointer;
-}
-
-.cart-area span{
-background: #fff;
-padding: 6px;
-margin: 0px 0px 0px -4px;
-}
-
-
-.cart-area i{
-padding-left: 5px;
-}
 
 
 /* Start side section */
@@ -99,4 +68,46 @@ padding-left: 5px;
  background-color: rgb(0, 0, 0, .8);
  z-index: 0;
 }
+
+
+
+/* @media (min-width: 320px) {
+   .wrapper{
+    width: 756px;
+   }
+   .navbar{
+    width: 414px;
+   }
+ } */
+
+ /* @media (min-width: 320px) and (max-width: 768px) {
+  .navbar {
+    width: 763px;
+}
+ } */
+
+
+
+ /* @media (min-width: 768px){
+.wrapper {
+    width: 766px;
+    height: 957px;
+}
+
+.container-md, .container-sm, .container {
+  max-width: 765px;
+}
+ } */
+
+ /* @media (min-width: 576px){
+.d-sm-block {
+    display: none !important;
+}
+ } */
+
+
+
+
+
+
 

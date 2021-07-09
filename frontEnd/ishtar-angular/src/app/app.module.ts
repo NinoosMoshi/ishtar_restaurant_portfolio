@@ -10,6 +10,7 @@ import { DropdownMenuComponent } from './components/dropdown-menu/dropdown-menu.
 import { SearchOrderComponent } from './components/search-order/search-order.component';
 import { OrderDetailsComponent } from './components/order-details/order-details.component';
 import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
+import { CartStatusComponent } from './components/cart-status/cart-status.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
     CategoryListComponent,
     DropdownMenuComponent,
     SearchOrderComponent,
-    OrderDetailsComponent
+    OrderDetailsComponent,
+    CartStatusComponent
   ],
   imports: [
     BrowserModule,

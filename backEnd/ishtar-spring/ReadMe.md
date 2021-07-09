@@ -91,3 +91,5 @@ Angular<br />
 2-[boundaryLinks]="true" it's the arrow to go first or last<br/>
 3- create size for pagination <br/>
 
+Angular<br/>
+1- create cart-status component<br/>

@@ -1,0 +1,32 @@
+.cart-area{
+  margin:3px;
+  overflow:hidden;
+  padding: 2px;
+  text-align: center;
+  font-weight: 500;
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  border: 1px solid #FDC949;
+  }
+
+  .cart-area a{
+  color: #FF6A00;
+  text-decoration: none;
+  }
+
+  .cart-area a:hover{
+  text-decoration: none;
+  cursor: pointer;
+  }
+
+  .cart-area span{
+  background: #fff;
+  padding: 6px;
+  margin: 0px 0px 0px -4px;
+  }
+
+
+  .cart-area i{
+  padding-left: 5px;
+  }
