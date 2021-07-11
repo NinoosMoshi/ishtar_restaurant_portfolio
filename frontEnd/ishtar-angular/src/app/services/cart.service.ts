@@ -1,5 +1,6 @@
 import { CartOrder } from './../model/cart-order';
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -7,8 +8,12 @@ import { Injectable } from '@angular/core';
 export class CartService {
 
   orders: CartOrder[] = [];
-  totalPrice:number = 0;
-  totalSize:number = 0;
+
+  // totalPrice:number = 0;
+  totalPrice: Subject<number> = new Subject<number>();
+
+  // totalSize:number = 0;
+  totalSize: Subject<number> = new Subject<number>();
 
   constructor() { }
 
@@ -40,7 +45,24 @@ export class CartService {
     }
 
     console.log(this.orders);
+    this.calculateTotals();
 
+  }
+  calculateTotals(){
+    let totalOfQuantity:number = 0;
+    let totalOfPrice:number = 0;
+    for(let temp of this.orders){
+       totalOfQuantity = totalOfQuantity + temp.quantity!;
+       totalOfPrice += temp.quantity! * temp.price!;
+    }
+    // this.totalSize = totalOfQuantity;
+    this.totalSize.next(totalOfQuantity);
+
+    // this.totalPrice = totalOfPrice;
+    this.totalPrice.next(totalOfPrice);
+
+    console.log("size of quantity " + this.totalSize)
+    console.log("size of price " + this.totalPrice)
   }
 
 }

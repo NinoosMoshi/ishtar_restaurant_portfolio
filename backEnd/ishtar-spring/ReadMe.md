@@ -100,3 +100,21 @@ Explain <h1>CartService</h1> <br/>
 ![Getting Started](./img/explain-CartService.png) <br />
 
 ![Getting Started](./img/console.log) <br />
+
+2- calculate total quantity and total price<br/>
+3- create <span style="color:green;">calculateTotals()</span> method in cartService<br/>
+<span>Note</span> <br/>
+in component, when we get the method we have to subscribe that method.<br/>
+<span style="color:red;">
+but to subscribe variables we have to change the type of these variables. ex:<br/>
+totalPrice:number = 0;<br/>
+it will be <br/>
+totalPrice: Subject<number> = new Subject<number>()<br/>
+and to invoke them<br/>
+this.totalPrice = totalOfPrice;<br/>
+it will be<br/>
+this.totalPrice.next(totalOfPrice);<br/>
+</span
+
+
+

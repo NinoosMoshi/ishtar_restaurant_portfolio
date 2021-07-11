@@ -18,8 +18,18 @@ export class CartStatusComponent implements OnInit {
   }
 
   getCartStatus(){
-   this.orderPrice = this.cartService.totalPrice;
-   this.orderSize = this.cartService.totalSize;
+  //  this.orderPrice = this.cartService.totalPrice;
+  //  this.orderSize = this.cartService.totalSize;
+  this.cartService.totalPrice.subscribe(
+    data =>{
+      this.orderPrice = data
+    }
+  )
+  this.cartService.totalSize.subscribe(
+    data =>{
+      this.orderSize = data
+    }
+  )
   }
 
 }
