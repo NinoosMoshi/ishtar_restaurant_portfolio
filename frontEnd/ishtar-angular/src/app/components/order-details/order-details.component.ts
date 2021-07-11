@@ -1,3 +1,5 @@
+import { CartService } from './../../services/cart.service';
+import { CartOrder } from './../../model/cart-order';
 
 import { ActivatedRoute } from '@angular/router';
 import { OrderService } from 'src/app/services/order.service';
@@ -14,7 +16,8 @@ export class OrderDetailsComponent implements OnInit {
   order!: Order;
 
   constructor(private orderService: OrderService,
-              private activeRoute: ActivatedRoute
+              private activeRoute: ActivatedRoute,
+              private cartService: CartService
               ) { }
 
   ngOnInit(): void {
@@ -28,5 +31,15 @@ export class OrderDetailsComponent implements OnInit {
      this.order = data
    })
  }
+
+
+ addToCart(order: Order){
+   const cartOrder = new CartOrder(order);
+   this.cartService.addOrderToCart(cartOrder);
+ }
+
+
+
+
 
 }

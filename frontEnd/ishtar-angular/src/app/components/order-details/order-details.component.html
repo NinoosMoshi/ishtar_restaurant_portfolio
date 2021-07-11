@@ -8,7 +8,7 @@
           <a><h5 class="card-title">{{order.orderName}}</h5></a>
           <p class="price">{{order.price | currency:'USD'}}</p>
           <p class="card-text">{{order.description}}</p>
-          <i routerLink="/order" class="fas fa-undo backword"></i><button>Add to Cart</button>
+          <i routerLink="/order" class="fas fa-undo backword"></i><button (click)="addToCart(order)">Add to Cart</button>
         </div>
       </div>
     </div>
