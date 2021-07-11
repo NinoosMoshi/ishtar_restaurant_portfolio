@@ -6,7 +6,7 @@
       <div class="card-body">
        <h5 class="card-title">{{temp.orderName}}</h5>
        <p class="price">{{temp.price | currency:'USD'}}</p>
-        <button>Add to Cart</button>
+        <button (click)="addToCart(temp)">Add to Cart</button>
       </div>
     </div>
   </div>

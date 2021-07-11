@@ -1,8 +1,8 @@
 <div class="cart-area">
   <a href="#">
      <div>
-         <span>$19.22</span>
-         <i class="fa fa-shopping-cart" aria-hidden="true"></i> 4
+         <span>{{orderPrice | currency:'USD'}}</span>
+         <i class="fa fa-shopping-cart" aria-hidden="true"></i> {{orderSize}}
 
      </div>
   </a>

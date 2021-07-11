@@ -1,3 +1,5 @@
+import { CartService } from './../../services/cart.service';
+import { CartOrder } from './../../model/cart-order';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Order } from 'src/app/model/order';
@@ -15,7 +17,7 @@ export class OrderListComponent implements OnInit {
   totalOrder:number = 0;  // collectionSize, the total number of orders
   orders: Order[]=[];
 
-  constructor(private orderService: OrderService, private activatedRoute: ActivatedRoute) { }
+  constructor(private orderService: OrderService, private activatedRoute: ActivatedRoute, private cartService:CartService) { }
 
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe(
@@ -92,6 +94,13 @@ export class OrderListComponent implements OnInit {
   pageSize(event: Event){
      this.pageLength = +(<HTMLInputElement>event.target).value
      this.finishOrders();
+  }
+
+
+
+  addToCart(temp: Order){
+     const orderCart = new CartOrder(temp);
+     this.cartService.addOrderToCart(orderCart);
   }
 
 

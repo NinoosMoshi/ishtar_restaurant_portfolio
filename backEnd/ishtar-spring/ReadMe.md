@@ -93,3 +93,10 @@ Angular<br />
 
 Angular<br/>
 1- create cart-status component<br/>
+explain:<br/>
+![Getting Started](./img/cartExplain.png) <br />
+
+Explain <h1>CartService</h1> <br/>
+![Getting Started](./img/explain-CartService.png) <br />
+
+![Getting Started](./img/console.log) <br />

@@ -1,10 +1,10 @@
 export class Category {
 
-  id:number | undefined;
-  categoryName:string | undefined;
-  categoryLogo:string | undefined;
-  dateCreated:Date | undefined;
-  dateUpdated:Date | undefined;
+  id?:number;
+  categoryName?:string;
+  categoryLogo?:string ;
+  dateCreated?:Date;
+  dateUpdated?:Date;
 
 
 }
