@@ -119,8 +119,12 @@ this.totalPrice.next(totalOfPrice);<br/>
 
 5- create addToCart method in order-details<br/>
 6- calculate total price and total size<br/>
-7 - add 'No Order Found' in order-list and purchases html component<br/>
-8- add increaseOrder() into purchases component
+7 - add 'No Order Found' in order-list and purchases html component<br />
+8- add increaseOrder() into purchases component<br />
+9- to decrease orders<br/>
+Explain:<br/>
+![Getting Started](./img/explain-removeOrder.png) <br />
+
 
 
 

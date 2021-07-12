@@ -1,3 +1,4 @@
+import { Order } from './../model/order';
 import { CartOrder } from './../model/cart-order';
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
@@ -64,5 +65,36 @@ export class CartService {
     console.log("size of quantity " + this.totalSize)
     console.log("size of price " + this.totalPrice)
   }
+
+
+  removeOrder(order: CartOrder){
+
+    order.quantity!--;
+
+    if(order.quantity === 0){
+
+      this.remove(order);
+
+    }
+    else{
+
+      this.calculateTotals();
+
+    }
+  }
+
+  remove(order: CartOrder){
+
+    const index = this.orders.findIndex(temp => temp.id === order.id);
+
+    if(index > -1){
+
+       this.orders.splice(index,1);
+
+       this.calculateTotals();
+    }
+  }
+
+
 
 }
