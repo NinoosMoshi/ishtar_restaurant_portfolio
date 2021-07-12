@@ -1,0 +1,54 @@
+.card{
+  width: 240px;
+
+}
+
+.totprice
+{
+  position: absolute;
+  padding: 10px;
+  font-weight: bold;
+  color: white;
+  background-color: #FF6A00;
+  font-size: 20px;
+}
+
+.to2{
+  right: 0;
+}
+
+
+.fa-plus{
+  /* margin-right: 47px; */
+  background-color: #FF6A00;
+  color: #fff;
+  padding: 8px;
+  border: 1px solid #e68908;
+}
+
+.fa-minus{
+  /* margin-left: 47px; */
+  background-color: #FF6A00;
+  color: #fff;
+  padding: 8px;
+  border: 1px solid #e68908;
+}
+
+
+span{
+  padding: 0px 50px 0px 50px;
+  font-size: 26px;
+  font-weight: bold;
+}
+
+
+
+
+button{
+  /* width: 409px; */
+  margin: 16px 0px -16px 0px;
+  background-color: #FF6A00;
+  color: #fff;
+  padding: 0px 90px 0px 90px;
+  border: 1px solid #e68908;
+}

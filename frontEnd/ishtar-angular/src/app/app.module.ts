@@ -11,6 +11,7 @@ import { SearchOrderComponent } from './components/search-order/search-order.com
 import { OrderDetailsComponent } from './components/order-details/order-details.component';
 import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 import { CartStatusComponent } from './components/cart-status/cart-status.component';
+import { PurchasesComponent } from './components/purchases/purchases.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { CartStatusComponent } from './components/cart-status/cart-status.compon
     DropdownMenuComponent,
     SearchOrderComponent,
     OrderDetailsComponent,
-    CartStatusComponent
+    CartStatusComponent,
+    PurchasesComponent
   ],
   imports: [
     BrowserModule,

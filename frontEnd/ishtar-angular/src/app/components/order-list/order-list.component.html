@@ -11,11 +11,11 @@
     </div>
   </div>
 
+  <div *ngIf="orders?.length == 0" class="alert alert-danger" role="alert">
+    No Order Found
+  </div>
+
   <!-- Start Pagination -->
-
-  <!-- End Pagination -->
-
-
   <div class=" col-md-8  pag ">
 
    <ngb-pagination
@@ -39,7 +39,7 @@
     </select>
   </div>
 
-</div>
+</div> <!-- End Pagination -->
 
 
 </div>  <!-- End row -->

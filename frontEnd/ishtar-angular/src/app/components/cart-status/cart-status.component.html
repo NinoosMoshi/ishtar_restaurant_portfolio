@@ -1,9 +1,11 @@
-<div class="cart-area">
-  <a href="#">
-     <div>
-         <span>{{orderPrice | currency:'USD'}}</span>
-         <i class="fa fa-shopping-cart" aria-hidden="true"></i> {{orderSize}}
+<a routerLink="/purchases">
+  <div class="cart-area">
+    <a href="#">
+      <div>
+          <span>{{orderPrice | currency:'USD'}}</span>
+          <i class="fa fa-shopping-cart" aria-hidden="true"></i> {{orderSize}}
 
-     </div>
-  </a>
-</div>
+      </div>
+    </a>
+  </div>
+</a>
