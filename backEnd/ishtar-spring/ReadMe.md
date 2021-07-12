@@ -125,6 +125,8 @@ this.totalPrice.next(totalOfPrice);<br/>
 Explain:<br/>
 ![Getting Started](./img/explain-removeOrder.png) <br />
 
+10- add removeOrders methods in purchases
+
 
 
 
