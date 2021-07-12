@@ -19,19 +19,19 @@
 
 
 .fa-plus{
-  /* margin-right: 47px; */
   background-color: #FF6A00;
   color: #fff;
   padding: 8px;
   border: 1px solid #e68908;
+  cursor: pointer;
 }
 
 .fa-minus{
-  /* margin-left: 47px; */
   background-color: #FF6A00;
   color: #fff;
   padding: 8px;
   border: 1px solid #e68908;
+  cursor: pointer;
 }
 
 

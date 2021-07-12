@@ -21,4 +21,8 @@ export class PurchasesComponent implements OnInit {
     this.orders = this.cartService.orders;
   }
 
+  increaseOrder(temp: CartOrder){
+     this.cartService.addOrderToCart(temp);
+  }
+
 }
