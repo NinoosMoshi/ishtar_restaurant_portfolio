@@ -1,3 +1,4 @@
+import { CheckOutComponent } from './components/check-out/check-out.component';
 import { PurchasesComponent } from './components/purchases/purchases.component';
 import { OrderDetailsComponent } from './components/order-details/order-details.component';
 import { OrderListComponent } from './components/order-list/order-list.component';
@@ -5,6 +6,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
+  {path:'check-out', component: CheckOutComponent},         // http://localhost:4200/check-out
   {path:'purchases', component: PurchasesComponent},         // http://localhost:4200/purchases
   {path:'order/:id', component: OrderDetailsComponent},     // http://localhost:4200/order/{id}
   {path:'category/:id', component: OrderListComponent},     // http://localhost:4200/category/{id}

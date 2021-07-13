@@ -1,0 +1,82 @@
+
+select {
+  width: 88%;
+}
+
+.myin{
+
+  width: 76px;
+}
+.data
+{
+  margin-bottom: 10px;
+  margin-left: 15%;
+  background-color: #1c1c1c;
+  border-radius: 52px;
+  z-index: 0;
+  padding: 20px
+}
+
+.myla
+{
+  font-weight: bold;
+  background-color: #FF6A00;
+  padding: 3px;
+  color: #fff;
+  width: 120px;
+  text-align: center;
+  margin: 10px 42%;
+}
+.smi
+{
+  margin-bottom: 0;
+  font-style: normal;
+  font-weight: bold;
+  color: aliceblue ;
+  margin-left: 35px;
+  font-size: 20px;
+}
+input[type="radio"], input[type="checkbox"] {
+  box-sizing: border-box;
+  padding: 0;
+  width: 51px;
+  height: 21px;
+}
+
+
+.check-out
+{
+  border-radius: 30px;
+  background-color: white;
+  padding: 20px;
+  width: 355px;
+  font-size: 21px;
+  font-weight: bold;
+  margin: 40px 187px;
+  z-index: 0;
+}
+.check-out.done
+{
+  width: 318px;
+  font-weight: bold;
+}
+.size
+{
+  background-color: #FF6A00;
+  padding: 8px;
+  color: aliceblue;
+  margin-bottom: 5px;
+}
+.totalprice
+{
+  margin-bottom: 20px;
+  background-color: #FF6A00;
+  padding: 8px;
+  color: aliceblue;
+}
+
+.done
+{
+  width: 318px;
+  font-weight: bold;
+}

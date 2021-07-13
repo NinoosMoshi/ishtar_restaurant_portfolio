@@ -44,8 +44,7 @@ span{
 
 
 
-button{
-  /* width: 409px; */
+.card button{
   margin: 16px 0px -16px 0px;
   background-color: #FF6A00;
   color: #fff;
@@ -59,8 +58,8 @@ button{
 {
   border-radius: 30px;
   background-color: white;
-  padding: 19px;
-  width: 291px;
+  padding: 20px;
+  width: 355px;
   font-size: 21px;
   font-weight: bold;
   margin: 93px 170px;
@@ -74,7 +73,7 @@ button{
 
 .size
 {
-  background-color: crimson;
+  background-color: #FF6A00;
   padding: 8px;
   color: aliceblue;
   margin-bottom: 5px;
@@ -82,9 +81,14 @@ button{
 .totalprice
 {
   margin-bottom: 20px;
-  background-color: blueviolet;
+  background-color: #FF6A00;
   padding: 8px;
   color: aliceblue;
 }
 
+.done
+{
+  width: 318px;
+  font-weight: bold;
+}
 /* End Check Out */

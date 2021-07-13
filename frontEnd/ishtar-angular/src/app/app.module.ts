@@ -12,6 +12,7 @@ import { OrderDetailsComponent } from './components/order-details/order-details.
 import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 import { CartStatusComponent } from './components/cart-status/cart-status.component';
 import { PurchasesComponent } from './components/purchases/purchases.component';
+import { CheckOutComponent } from './components/check-out/check-out.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { PurchasesComponent } from './components/purchases/purchases.component';
     SearchOrderComponent,
     OrderDetailsComponent,
     CartStatusComponent,
-    PurchasesComponent
+    PurchasesComponent,
+    CheckOutComponent
   ],
   imports: [
     BrowserModule,

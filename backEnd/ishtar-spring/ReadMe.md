@@ -130,6 +130,10 @@ Explain:<br/>
 12- handle check out in purchases<br/>
 
 
+Angular<br/>
+1- create check-out component<br/>
+
+
 
 
 
