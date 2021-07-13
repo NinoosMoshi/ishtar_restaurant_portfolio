@@ -71,39 +71,36 @@ background-color:#FF6A00;
 
 
 
-/* @media (min-width: 320px) {
-   .wrapper{
-    width: 756px;
-   }
-   .navbar{
-    width: 414px;
-   }
- } */
+/* @media (max-width: 320px) {
 
- /* @media (min-width: 320px) and (max-width: 768px) {
   .navbar {
-    width: 763px;
-}
+    width: 473px;
+   }
+
+   .wrapper{
+    min-height: 766px;
+    width: 473px;
+   }
+ }
+
+
+
+ @media (min-width: 1200px) {
+
+  .navbar {
+    width: 1519px
+   }
+
+   .wrapper{
+      min-height: 672px;
+      width: 1519px
+   }
  } */
 
 
 
- /* @media (min-width: 768px){
-.wrapper {
-    width: 766px;
-    height: 957px;
-}
 
-.container-md, .container-sm, .container {
-  max-width: 765px;
-}
- } */
 
- /* @media (min-width: 576px){
-.d-sm-block {
-    display: none !important;
-}
- } */
 
 
 

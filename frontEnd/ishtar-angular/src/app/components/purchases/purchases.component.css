@@ -52,3 +52,39 @@ button{
   padding: 0px 90px 0px 90px;
   border: 1px solid #e68908;
 }
+
+
+/* Start Check Out */
+.check-out
+{
+  border-radius: 30px;
+  background-color: white;
+  padding: 19px;
+  width: 291px;
+  font-size: 21px;
+  font-weight: bold;
+  margin: 93px 170px;
+  position: absolute;
+  z-index: 0;
+}
+
+.check-out button{
+  padding: 6px 60px 7px 60px;
+}
+
+.size
+{
+  background-color: crimson;
+  padding: 8px;
+  color: aliceblue;
+  margin-bottom: 5px;
+}
+.totalprice
+{
+  margin-bottom: 20px;
+  background-color: blueviolet;
+  padding: 8px;
+  color: aliceblue;
+}
+
+/* End Check Out */

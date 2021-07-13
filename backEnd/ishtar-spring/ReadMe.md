@@ -125,7 +125,10 @@ this.totalPrice.next(totalOfPrice);<br/>
 Explain:<br/>
 ![Getting Started](./img/explain-removeOrder.png) <br />
 
-10- add removeOrders methods in purchases
+10- add removeOrders methods in purchases<br/>
+11- handle remove button in purchases component<br/>
+12- handle check out in purchases<br/>
+
 
 
 

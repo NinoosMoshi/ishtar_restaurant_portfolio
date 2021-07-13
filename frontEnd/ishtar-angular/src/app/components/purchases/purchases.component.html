@@ -19,7 +19,20 @@
       </div>
     </div>
   </div>
-</div>
+
+
+</div>  <!--  end row -->
+
+
+  <!-- Start Check Out -->
+
+  <div class="check-out">
+    <div class="size">Total Order: {{totalSize}}</div>
+    <div class="totalprice">Total Price: {{totalPrice | currency: 'USD'}}</div>
+    <button type="button" class="btn btn-primary done">Check Out</button>
+  </div>
+
+  <!-- End Check Out -->
 
 
 <div *ngIf="orders?.length == 0" class="alert alert-danger" role="alert">
