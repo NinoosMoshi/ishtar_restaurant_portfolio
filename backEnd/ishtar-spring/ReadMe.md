@@ -132,6 +132,7 @@ Explain:<br/>
 
 Angular<br/>
 1- create check-out component<br/>
+2- create router path for check-out in purchases<br/>
 
 
 

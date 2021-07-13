@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { CartService } from './../../services/cart.service';
 import { CartOrder } from './../../model/cart-order';
 import { Component, OnInit } from '@angular/core';
@@ -14,7 +15,7 @@ export class PurchasesComponent implements OnInit {
 
   orders: CartOrder[] = [];
 
-  constructor(private cartService: CartService) { }
+  constructor(private cartService: CartService, private router:Router) { }
 
   ngOnInit(): void {
     this.getAllOrder();
@@ -51,6 +52,11 @@ export class PurchasesComponent implements OnInit {
 
   remove(temp: CartOrder){
     this.cartService.remove(temp);
+  }
+
+
+  checkOut(){
+    this.router.navigateByUrl("/check-out");
   }
 
 
