@@ -150,7 +150,9 @@ Angular<br/>
   6- give child group div a name<br/>
   7- give a name for inputs<br/>
 </div>
-
+3- to submit <form (ngSubmit)="done()"></form><br/>
+4- to print values of child, <span style="color: green">console.log(this.checkOutParentGroup.get('data')?.value);</span><br/>
+5- to print one value of one child, <span style="color: green">console.log(this.checkOutParentGroup.get('data.fullName')?.value);</span><br/>
 
 
 
