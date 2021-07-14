@@ -134,6 +134,23 @@ Angular<br/>
 1- create check-out component<br/>
 2- create router path for check-out in purchases<br/>
 
+Angular<br/>
+1- explain form group<br/>
+![Getting Started](./img/formGroup.PNG) <br />
+
+2- form group (parent and child)<br/>
+![Getting Started](./img/Form(parent&child).PNG) <br />
+<div>
+  1- create parent group <span style="color: green">checkOutParentGroup!: FormGroup;</span> <br/>
+  2- put <span style="color: green">[formGroup]="checkOutParentGroup"</span> in
+     parent div<br/>
+  3- import ReactiveFormsModel<br/>
+  4- to build a child group inside parent group <span style="color: green">private formChildGroup: FormBuilder</span><br/>  
+  5- parentGroup = childgroup div and childgroup div has inputs group as well.<br/>
+  6- give child group div a name<br/>
+  7- give a name for inputs<br/>
+</div>
+
 
 
 
