@@ -29,18 +29,22 @@
     <label class="myla">Billing Address: </label>
     <div class="input-group mb-3">
       <select  formControlName="state" class="form-select">
-        <option ></option>
+        <option *ngFor="let temp of states">{{temp.stateName}}</option>
       </select>
       <label class="input-group-text myin" for="inputGroupSelect02">State</label>
     </div>
 
     <div class="input-group mb-3">
       <select  formControlName="city" class="form-select">
-        <option ></option>
+        <option *ngFor="let temp of cities">{{temp.cityName}}</option>
       </select>
       <label class="input-group-text myin" for="inputGroupSelect02">City</label>
     </div>
 
+    <div class="input-group mb-3">
+      <span class="input-group-text">Street</span>
+      <input formControlName="street" type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+    </div>
 
     <div class="input-group mb-3">
       <span class="input-group-text">Zip Code</span>
@@ -61,18 +65,22 @@
     <label class="myla">Shipping Address:</label>
     <div class="input-group mb-3">
       <select  formControlName="state" class="form-select">
-        <option ></option>
-
+        <option *ngFor="let temp of states">{{temp.stateName}}</option>
       </select>
       <label class="input-group-text myin" for="inputGroupSelect02">State</label>
     </div>
 
     <div class="input-group mb-3">
       <select  formControlName="city" class="form-select">
-        <option ></option>
+        <option *ngFor="let temp of cities">{{temp.cityName}}</option>
 
       </select>
       <label class="input-group-text myin" for="inputGroupSelect02">City</label>
+    </div>
+
+    <div class="input-group mb-3">
+      <span class="input-group-text">Street</span>
+      <input formControlName="street" type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
     </div>
 
     <div class="input-group mb-3">

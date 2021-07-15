@@ -154,7 +154,11 @@ Angular<br/>
 4- to print values of child, <span style="color: green">console.log(this.checkOutParentGroup.get('data')?.value);</span><br/>
 5- to print one value of one child, <span style="color: green">console.log(this.checkOutParentGroup.get('data.fullName')?.value);</span><br/>
 
+Spring<br/>
+create state and city(model,repository,service,controller).<br/>
 
+Angular<br/>
+create state and city(model,service,ts,html)<br/>
 
 
 

@@ -21,6 +21,9 @@ public class City {
     @Column(name = "city_name")
     private String cityName;
 
+    @Column(name = "street_name")
+    private String streetName;
+
 
     @JsonIgnore
     @ManyToOne

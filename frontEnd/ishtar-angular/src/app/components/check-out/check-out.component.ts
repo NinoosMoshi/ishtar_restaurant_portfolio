@@ -1,3 +1,6 @@
+import { StateCityService } from './../../services/state-city.service';
+import { City } from './../../model/city';
+import { State } from './../../model/state';
 import { ThisReceiver, ThrowStmt } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
@@ -9,11 +12,19 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class CheckOutComponent implements OnInit {
 
+  states: State[] = [];
+  cities: City[] = [];
   checkOutParentGroup!: FormGroup;
 
-  constructor(private formChildGroup: FormBuilder) { }
+  constructor(private formChildGroup: FormBuilder, private stateCityService: StateCityService) { }
 
   ngOnInit(): void {
+     this.myForm();
+     this.getStates();
+     this.getCities();
+  }
+
+  myForm(){
     this.checkOutParentGroup = this.formChildGroup.group({
       data:this.formChildGroup.group({
         fullName:[''],
@@ -23,11 +34,13 @@ export class CheckOutComponent implements OnInit {
       fromPerson:this.formChildGroup.group({
         state:[''],
         city:[''],
+        street:[''],
         zipCode:['']
       }),
       toPerson:this.formChildGroup.group({
         state:[''],
         city:[''],
+        street:[''],
         zipCode:['']
       }),
       creditCard:this.formChildGroup.group({
@@ -54,5 +67,21 @@ export class CheckOutComponent implements OnInit {
   }
 
 
+  getStates(){
+    this.stateCityService.getAllState().subscribe(
+      data =>{
+        this.states = data;
+      }
+    )
+  }
+
+
+  getCities(){
+    this.stateCityService.getAllCities().subscribe(
+      data =>{
+        this.cities = data
+      }
+    )
+  }
 
 }
