@@ -1,7 +1,7 @@
 <form (ngSubmit)="done()" [formGroup]="checkOutParentGroup"  class="row mt-3" >
 
   <div formGroupName="data" class="col-md-8 data">
-    <label class="myla">Your Data</label>
+    <label class="myla">Customer</label>
     <div class="input-group mb-3">
       <span class="input-group-text" >@</span>
       <input formControlName="fullName" type="text" class="form-control" placeholder="Full Name" aria-label="Username" aria-describedby="basic-addon1">
@@ -26,22 +26,22 @@
 
 
   <div formGroupName="fromPerson" class="col-md-8 data">
-    <label class="myla">From : </label>
+    <label class="myla">Billing Address: </label>
     <div class="input-group mb-3">
-
-      <select  formControlName="country" class="form-select">
+      <select  formControlName="state" class="form-select">
         <option ></option>
-      </select>
-
-      <label class="input-group-text myin" for="inputGroupSelect02">Country</label>
-    </div>
-    <div class="input-group mb-3">
-      <select formControlName="state" class="form-select" id="inputGroupSelect02">
-        <option ></option>
-
       </select>
       <label class="input-group-text myin" for="inputGroupSelect02">State</label>
     </div>
+
+    <div class="input-group mb-3">
+      <select  formControlName="city" class="form-select">
+        <option ></option>
+      </select>
+      <label class="input-group-text myin" for="inputGroupSelect02">City</label>
+    </div>
+
+
     <div class="input-group mb-3">
       <span class="input-group-text">Zip Code</span>
       <input formControlName="zipCode" type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
@@ -52,26 +52,29 @@
   <div class="col-md-8  data">
     <div class="form-check form-switch">
       <input (change)="similarGroup($event)"  class="form-check-input" type="checkbox" id="flexSwitchCheckChecked">
-      <label class="form-check-label smi" for="flexSwitchCheckChecked">To Same Address</label>
+      <label class="form-check-label smi" for="flexSwitchCheckChecked">Shipping Address same as Billing Address </label>
     </div>
 
   </div>
 
   <div formGroupName="toPerson" class="col-md-8 data">
-    <label class="myla">To :</label>
+    <label class="myla">Shipping Address:</label>
     <div class="input-group mb-3">
-      <select  formControlName="country" class="form-select">
+      <select  formControlName="state" class="form-select">
         <option ></option>
 
       </select>
-      <label class="input-group-text myin" for="inputGroupSelect02">Country</label>
+      <label class="input-group-text myin" for="inputGroupSelect02">State</label>
     </div>
+
     <div class="input-group mb-3">
-      <select formControlName="state" class="form-select" >
+      <select  formControlName="city" class="form-select">
         <option ></option>
+
       </select>
-      <label class="input-group-text myin" >State</label>
+      <label class="input-group-text myin" for="inputGroupSelect02">City</label>
     </div>
+
     <div class="input-group mb-3">
       <span class="input-group-text" id="basic-addon3">Zip Code</span>
       <input formControlName="zipCode" type="text" class="form-control" aria-describedby="basic-addon3">

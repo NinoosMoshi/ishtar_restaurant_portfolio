@@ -21,13 +21,13 @@ export class CheckOutComponent implements OnInit {
         phone:['']
       }),
       fromPerson:this.formChildGroup.group({
-        country:[''],
         state:[''],
+        city:[''],
         zipCode:['']
       }),
       toPerson:this.formChildGroup.group({
-        country:[''],
         state:[''],
+        city:[''],
         zipCode:['']
       }),
       creditCard:this.formChildGroup.group({
