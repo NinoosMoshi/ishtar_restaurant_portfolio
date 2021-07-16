@@ -28,15 +28,15 @@
   <div formGroupName="fromPerson" class="col-md-8 data">
     <label class="myla">Billing Address: </label>
     <div class="input-group mb-3">
-      <select  formControlName="state" class="form-select">
-        <option *ngFor="let temp of states">{{temp.stateName}}</option>
+      <select (change)="getCitiesByCode('fromPerson')"  formControlName="state" class="form-select">
+        <option [ngValue]='temp.stateCode' *ngFor="let temp of states">{{temp.stateName}}</option>
       </select>
       <label class="input-group-text myin" for="inputGroupSelect02">State</label>
     </div>
 
     <div class="input-group mb-3">
-      <select  formControlName="city" class="form-select">
-        <option *ngFor="let temp of cities">{{temp.cityName}}</option>
+      <select formControlName="city" class="form-select">
+        <option [ngValue]="temp" *ngFor="let temp of citiesFromPerson">{{temp.cityName}}</option>
       </select>
       <label class="input-group-text myin" for="inputGroupSelect02">City</label>
     </div>
@@ -64,15 +64,15 @@
   <div formGroupName="toPerson" class="col-md-8 data">
     <label class="myla">Shipping Address:</label>
     <div class="input-group mb-3">
-      <select  formControlName="state" class="form-select">
-        <option *ngFor="let temp of states">{{temp.stateName}}</option>
+      <select (change)="getCitiesByCode('toPerson')" formControlName="state" class="form-select">
+        <option [ngValue]='temp.stateCode' *ngFor="let temp of states">{{temp.stateName}}</option>
       </select>
       <label class="input-group-text myin" for="inputGroupSelect02">State</label>
     </div>
 
     <div class="input-group mb-3">
       <select  formControlName="city" class="form-select">
-        <option *ngFor="let temp of cities">{{temp.cityName}}</option>
+        <option [ngValue]="temp" *ngFor="let temp of citiesToPerson">{{temp.cityName}}</option>
 
       </select>
       <label class="input-group-text myin" for="inputGroupSelect02">City</label>

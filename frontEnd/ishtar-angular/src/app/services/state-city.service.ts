@@ -23,12 +23,19 @@ export class StateCityService {
   }
 
 
-    //http://localhost:8080/api/cities
-    getAllCities(): Observable<City[]>{
-      return this.http.get<City[]>(`${this.baseUrl}/cities`).pipe(
-       map(response => response)
-     );
-   }
+  //   //http://localhost:8080/api/cities
+  //   getAllCities(): Observable<City[]>{
+  //     return this.http.get<City[]>(`${this.baseUrl}/cities`).pipe(
+  //      map(response => response)
+  //    );
+  //  }
+
+   // http://localhost:8080/api/city-code?code={value}
+   getCitiesByStateCode(code:string): Observable<City[]>{
+    return this.http.get<City[]>(`${this.baseUrl}/city-code?code=${code}`).pipe(
+     map(response => response)
+   );
+ }
 
 
 }

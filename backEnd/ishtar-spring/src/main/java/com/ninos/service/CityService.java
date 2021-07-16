@@ -20,4 +20,11 @@ public class CityService {
     public List<City> getCities(){
         return cityRepository.findAll();
     }
+
+
+    public List<City> getCitiesByStateCode(String code){
+        return cityRepository.findByState_StateCode(code);
+    }
+
+
 }

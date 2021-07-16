@@ -13,7 +13,8 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 export class CheckOutComponent implements OnInit {
 
   states: State[] = [];
-  cities: City[] = [];
+  citiesFromPerson: City[] = [];
+  citiesToPerson: City[] = [];
   checkOutParentGroup!: FormGroup;
 
   constructor(private formChildGroup: FormBuilder, private stateCityService: StateCityService) { }
@@ -21,7 +22,8 @@ export class CheckOutComponent implements OnInit {
   ngOnInit(): void {
      this.myForm();
      this.getStates();
-     this.getCities();
+    // this.getCities();
+    // this.getCitiesByCode();
   }
 
   myForm(){
@@ -60,7 +62,8 @@ export class CheckOutComponent implements OnInit {
 
   similarGroup(event: Event){
     if((<HTMLInputElement>event.target).checked){
-      this.checkOutParentGroup.controls.toPerson.setValue(this.checkOutParentGroup.controls.fromPerson.value)
+      this.checkOutParentGroup.controls.toPerson.setValue(this.checkOutParentGroup.controls.fromPerson.value);
+      this.citiesToPerson = this.citiesFromPerson;
     }else{
       this.checkOutParentGroup.controls.toPerson.reset();
     }
@@ -76,10 +79,24 @@ export class CheckOutComponent implements OnInit {
   }
 
 
-  getCities(){
-    this.stateCityService.getAllCities().subscribe(
+  // getCities(){
+  //   this.stateCityService.getAllCities().subscribe(
+  //     data =>{
+  //       this.cities = data
+  //     }
+  //   )
+  // }
+
+  getCitiesByCode(type: string){
+    let code = this.checkOutParentGroup.get(`${type}.state`)?.value;
+    this.stateCityService.getCitiesByStateCode(code).subscribe(
       data =>{
-        this.cities = data
+         if(type === 'fromPerson'){
+           this.citiesFromPerson = data
+         }else{
+           this.citiesToPerson = data
+         }
+         this.checkOutParentGroup.get(`${type}.city`)?.setValue(data[0]); // to show the first city in select when you choose a state
       }
     )
   }

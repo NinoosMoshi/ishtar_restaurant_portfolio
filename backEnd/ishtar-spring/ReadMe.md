@@ -160,5 +160,11 @@ create state and city(model,repository,service,controller).<br/>
 Angular<br/>
 create state and city(model,service,ts,html)<br/>
 
+Spring<br/>
+when we choose a specific state ex(il), we will get cities that belong to (il) state (like Niles, Skokie)<br/>
+so we want to return a cities based on state, in CityRepository: <span style="color:green;">public List<City> findByState_StateCode(String code);</span>
 
-
+Angular<br/>
+To explain select box in Form<br/>
+![Getting Started](./img/selectForm.png) <br />
+![Getting Started](./img/selectInForm.PNG) <br />
