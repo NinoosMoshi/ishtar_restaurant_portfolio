@@ -4,6 +4,7 @@ import { State } from './../../model/state';
 import { ThisReceiver, ThrowStmt } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { SpaceValidator } from 'src/app/model/space-validator';
 
 @Component({
   selector: 'app-check-out',
@@ -30,6 +31,7 @@ export class CheckOutComponent implements OnInit {
     this.checkOutParentGroup = this.formChildGroup.group({
       data:this.formChildGroup.group({
         fullName: new FormControl('',[Validators.required,
+                                      SpaceValidator.onlyContainSpace,
                                       Validators.minLength(6)]),
 
         gmail: new FormControl('',[Validators.required,
