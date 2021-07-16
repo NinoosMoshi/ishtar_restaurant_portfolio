@@ -174,6 +174,7 @@ Angular<br/>
 1-change <span style="color:blue;"> fullName:['']</span>with<span style="color:blue;"> fullName: new FormControl('',[Validators.required,
 Validators.minLength(6)]),</span> <br/>
 
-2- Angular create alert for validation
+2- Angular create alert for validation<br/>
+![Getting Started](./img/validation.PNG) <br />
 
 

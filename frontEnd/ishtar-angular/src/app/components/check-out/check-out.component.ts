@@ -63,9 +63,27 @@ export class CheckOutComponent implements OnInit {
   }
 
 
+  get fullName(){
+    return this.checkOutParentGroup.get('data.fullName');
+  }
+
+  get email(){
+    return this.checkOutParentGroup.get('data.gmail');
+  }
+
+  get phone(){
+    return this.checkOutParentGroup.get('data.phone');
+  }
+
+
   done(){
-    console.log(this.checkOutParentGroup.get('data')?.value);
-    console.log(this.checkOutParentGroup.get('data.fullName')?.value);
+    if(this.checkOutParentGroup.invalid){
+      this.checkOutParentGroup.markAllAsTouched();
+    }else{
+      console.log(this.checkOutParentGroup.get('data')?.value);
+      console.log(this.checkOutParentGroup.get('data.fullName')?.value);
+    }
+
   }
 
 
