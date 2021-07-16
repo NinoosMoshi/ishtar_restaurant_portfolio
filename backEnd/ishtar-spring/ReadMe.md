@@ -168,3 +168,12 @@ Angular<br/>
 To explain select box in Form<br/>
 ![Getting Started](./img/selectForm.png) <br />
 ![Getting Started](./img/selectInForm.PNG) <br />
+
+Angular<br/>
+<h2>Validation</h2><br/>
+1-change <span style="color:blue;"> fullName:['']</span>with<span style="color:blue;"> fullName: new FormControl('',[Validators.required,
+Validators.minLength(6)]),</span> <br/>
+
+2- Angular create alert for validation
+
+

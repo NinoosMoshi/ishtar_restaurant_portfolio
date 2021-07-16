@@ -3,7 +3,7 @@ import { City } from './../../model/city';
 import { State } from './../../model/state';
 import { ThisReceiver, ThrowStmt } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-check-out',
@@ -29,10 +29,19 @@ export class CheckOutComponent implements OnInit {
   myForm(){
     this.checkOutParentGroup = this.formChildGroup.group({
       data:this.formChildGroup.group({
-        fullName:[''],
-        gmail:[''],
-        phone:['']
+        fullName: new FormControl('',[Validators.required,
+                                      Validators.minLength(6)]),
+
+        gmail: new FormControl('',[Validators.required,
+                                   Validators.pattern('^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$') ]),
+        phone: new FormControl('',[
+                                    Validators.required,
+                                    Validators.minLength(10),
+                                    Validators.maxLength(10),
+                                    Validators.pattern('^[0-9]*$')
+        ])
       }),
+
       fromPerson:this.formChildGroup.group({
         state:[''],
         city:[''],
