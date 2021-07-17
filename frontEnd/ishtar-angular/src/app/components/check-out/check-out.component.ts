@@ -1,3 +1,4 @@
+import { CartService } from './../../services/cart.service';
 import { StateCityService } from './../../services/state-city.service';
 import { City } from './../../model/city';
 import { State } from './../../model/state';
@@ -13,16 +14,19 @@ import { SpaceValidator } from 'src/app/model/space-validator';
 })
 export class CheckOutComponent implements OnInit {
 
+  totalCheckOutPrice: number = 0;
+  totalCheckOutSize: number = 0;
   states: State[] = [];
   citiesFromPerson: City[] = [];
   citiesToPerson: City[] = [];
   checkOutParentGroup!: FormGroup;
 
-  constructor(private formChildGroup: FormBuilder, private stateCityService: StateCityService) { }
+  constructor(private formChildGroup: FormBuilder, private stateCityService: StateCityService,private cartService: CartService) { }
 
   ngOnInit(): void {
      this.myForm();
      this.getStates();
+     this.getTotal();
     // this.getCities();
     // this.getCitiesByCode();
   }
@@ -129,5 +133,23 @@ export class CheckOutComponent implements OnInit {
       }
     )
   }
+
+
+
+
+   getTotal(){
+      this.cartService.totalPrice.subscribe(
+        data =>{
+          this.totalCheckOutPrice = data;
+        }
+      )
+      this.cartService.totalSize.subscribe(
+        data =>{
+          this.totalCheckOutSize = data
+        }
+      )
+   }
+
+
 
 }

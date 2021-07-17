@@ -1,7 +1,7 @@
 import { Order } from './../model/order';
 import { CartOrder } from './../model/cart-order';
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { BehaviorSubject, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -11,10 +11,10 @@ export class CartService {
   orders: CartOrder[] = [];
 
   // totalPrice:number = 0;
-  totalPrice: Subject<number> = new Subject<number>();
+  totalPrice: Subject<number> = new BehaviorSubject<number>(0);
 
   // totalSize:number = 0;
-  totalSize: Subject<number> = new Subject<number>();
+  totalSize: Subject<number> = new BehaviorSubject<number>(0);
 
   constructor() { }
 
