@@ -189,6 +189,7 @@ Explain how to save Form in MySql <br/>
 
 1- create model class(customer, item,request,address and relationship).<br/>
 2- create dto (FormRequest and FormResponse).<br/>
-3- create CustomerRepository,PurchaseService and PurchaseServiceImpl 
+3- create CustomerRepository,PurchaseService and PurchaseServiceImpl<br/>
+4- create PurchaseController
 
 
