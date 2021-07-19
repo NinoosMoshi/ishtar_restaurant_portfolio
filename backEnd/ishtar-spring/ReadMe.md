@@ -177,4 +177,17 @@ Validators.minLength(6)]),</span> <br/>
 2- Angular create alert for validation<br/>
 ![Getting Started](./img/validation.PNG) <br />
 
+3- totalPrice and totalSize in checkout component<br/>
+change Subject to BehaviorSubject in cartService to get totalPrice and totalSize in checkout<br/>
+
+Spring<br/>
+Explain how to save Form in MySql <br/>
+![Getting Started](./img/saveFormInMysql.png) <br />
+
+![Getting Started](./img/FormMysql.PNG) <br />
+![Getting Started](./img/FormMysql1.png) <br />
+
+1- create model class(customer, item,request,address and relationship).<br/>
+2- create dto (FormRequest and FormResponse).<br/>
+
 
