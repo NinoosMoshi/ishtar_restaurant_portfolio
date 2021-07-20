@@ -2,10 +2,11 @@ import { CartService } from './../../services/cart.service';
 import { StateCityService } from './../../services/state-city.service';
 import { City } from './../../model/city';
 import { State } from './../../model/state';
-import { ThisReceiver, ThrowStmt } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { SpaceValidator } from 'src/app/model/space-validator';
+import { Request } from './../../model/form/request';
+import { Item } from './../../model/form/item';
 
 @Component({
   selector: 'app-check-out',
@@ -86,8 +87,16 @@ export class CheckOutComponent implements OnInit {
     if(this.checkOutParentGroup.invalid){
       this.checkOutParentGroup.markAllAsTouched();
     }else{
-      console.log(this.checkOutParentGroup.get('data')?.value);
-      console.log(this.checkOutParentGroup.get('data.fullName')?.value);
+      let client = this.checkOutParentGroup.controls['data'].value;
+      let fromAddress = this.checkOutParentGroup.controls['fromPerson'].value;
+      let toAddress = this.checkOutParentGroup.controls['toPerson'].value;
+      let requestOrder = new Request();
+      requestOrder.totalPrice = this.totalCheckOutPrice;
+      requestOrder.totalQuantity = this.totalCheckOutSize;
+      let items: Item[] = [];
+      for(let i=0; i< this.cartService.orders.length;i++){
+        items[i] = new Item(this.cartService.orders[i]);
+      }
     }
 
   }
