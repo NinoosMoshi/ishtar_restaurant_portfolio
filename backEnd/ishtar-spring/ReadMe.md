@@ -190,6 +190,51 @@ Explain how to save Form in MySql <br/>
 1- create model class(customer, item,request,address and relationship).<br/>
 2- create dto (FormRequest and FormResponse).<br/>
 3- create CustomerRepository,PurchaseService and PurchaseServiceImpl<br/>
-4- create PurchaseController
+4- create PurchaseController<br/>
+5- test<br/>
+
+ <p>
+ {
+ "customer":{
+             "fullName":"ninos moshi",
+             "email"   :"ninos@yahoo.com",
+             "phoneNumber":"2243546534"
+             },
+  "fromAddress":{
+              "state":"il",
+              "city":"Niles",
+              "street":"2354 n chester st",
+              "zipCode":"60714"
+                },
+  "toAddress":{
+              "state":"il",
+              "city":"Niles",
+              "street":"4444 n main st",
+              "zipCode":"60714"
+               },
+   "requestOrder":{
+                "totalPrice": "10.00",
+                "totalQuantity": "2"
+                 },
+   "items":[
+             {
+                "image":"food/cheeseBurger",
+                "quantity":1,
+                "price":5.00
+              },
+              {
+                 "image":"food/spainBurger",
+                 "quantity":1,
+                 "price":5.00
+              }
+           ]
+
+}
+</p><br/>
+
+Angular<br/>
+1- create form model(request,item,.....)<br/>
+![Getting Started](./img/angularFormModel.png) <br />
+
 
 

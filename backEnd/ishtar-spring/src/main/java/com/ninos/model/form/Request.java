@@ -39,11 +39,11 @@ public class Request {
     @Column(name = "date_update")
     private Date dateUpdated;
 
-   // @EqualsAndHashCode.Exclude
+    @EqualsAndHashCode.Exclude
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "requestOrder")
     private List<Item> items = new ArrayList<>();
 
-    //@EqualsAndHashCode.Exclude
+    @EqualsAndHashCode.Exclude
     @ManyToOne
     @JoinColumn(name = "customer_id")
     private Customer customer = new Customer();
