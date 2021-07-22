@@ -236,5 +236,9 @@ Angular<br/>
 1- create form model(request,item,.....)<br/>
 ![Getting Started](./img/angularFormModel.png) <br />
 
+2- create PurchaseService<br/>
+
+3- Handle purchases in check-out <br/>
+
 
 

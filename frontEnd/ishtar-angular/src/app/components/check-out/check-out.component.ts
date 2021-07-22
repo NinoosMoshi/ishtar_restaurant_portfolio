@@ -1,3 +1,4 @@
+
 import { CartService } from './../../services/cart.service';
 import { StateCityService } from './../../services/state-city.service';
 import { City } from './../../model/city';
@@ -7,6 +8,8 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { SpaceValidator } from 'src/app/model/space-validator';
 import { Request } from './../../model/form/request';
 import { Item } from './../../model/form/item';
+import {PurchaseRequest} from './../../model/form/purchase-request'
+import { PurchaseService } from 'src/app/services/purchase.service';
 
 @Component({
   selector: 'app-check-out',
@@ -22,7 +25,10 @@ export class CheckOutComponent implements OnInit {
   citiesToPerson: City[] = [];
   checkOutParentGroup!: FormGroup;
 
-  constructor(private formChildGroup: FormBuilder, private stateCityService: StateCityService,private cartService: CartService) { }
+  constructor(private formChildGroup: FormBuilder,
+              private stateCityService: StateCityService,
+              private cartService: CartService,
+              private purchaseService: PurchaseService) { }
 
   ngOnInit(): void {
      this.myForm();
@@ -87,7 +93,7 @@ export class CheckOutComponent implements OnInit {
     if(this.checkOutParentGroup.invalid){
       this.checkOutParentGroup.markAllAsTouched();
     }else{
-      let client = this.checkOutParentGroup.controls['data'].value;
+      let customer = this.checkOutParentGroup.controls['data'].value;
       let fromAddress = this.checkOutParentGroup.controls['fromPerson'].value;
       let toAddress = this.checkOutParentGroup.controls['toPerson'].value;
       let requestOrder = new Request();
@@ -97,6 +103,22 @@ export class CheckOutComponent implements OnInit {
       for(let i=0; i< this.cartService.orders.length;i++){
         items[i] = new Item(this.cartService.orders[i]);
       }
+
+      let purchaseRequest = new PurchaseRequest();
+      purchaseRequest.customer = customer;
+      purchaseRequest.fromAddress = fromAddress;
+      purchaseRequest.toAddress = toAddress;
+      purchaseRequest.requestOrder = requestOrder;
+      purchaseRequest.items = items;
+      // this.purchaseService.getOrder(purchaseRequest).subscribe({
+      //   next: response =>{
+
+      //   },
+      //   error: error =>{
+
+      //   }
+      // })
+
     }
 
   }
