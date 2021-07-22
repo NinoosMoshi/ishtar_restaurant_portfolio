@@ -1,3 +1,5 @@
+import { Router } from '@angular/router';
+import { CartOrder } from './../../model/cart-order';
 import { Address } from './../../model/form/address';
 import { Customer } from './../../model/form/customer';
 
@@ -30,7 +32,8 @@ export class CheckOutComponent implements OnInit {
   constructor(private formChildGroup: FormBuilder,
               private stateCityService: StateCityService,
               private cartService: CartService,
-              private purchaseService: PurchaseService) { }
+              private purchaseService: PurchaseService,
+              private router: Router) { }
 
   ngOnInit(): void {
      this.myForm();
@@ -107,9 +110,12 @@ export class CheckOutComponent implements OnInit {
       requestOrder.totalPrice = this.totalCheckOutPrice;
       requestOrder.totalQuantity = this.totalCheckOutSize;
       let items: Item[] = [];
-      for(let i=0; i< this.cartService.orders.length;i++){
-        items[i] = new Item(this.cartService.orders[i]);
-      }
+      let orders: CartOrder[] = this.cartService.orders;
+      // for(let i=0; i< orders.length;i++){
+      //   items[i] = new Item(orders[i]);
+      // }
+      items = orders.map(order => new Item(order));
+
 
       let purchaseRequest = new PurchaseRequest();
       purchaseRequest.customer = customer;
@@ -117,15 +123,10 @@ export class CheckOutComponent implements OnInit {
       purchaseRequest.toAddress = toAddress;
       purchaseRequest.requestOrder = requestOrder;
       purchaseRequest.items = items;
-      console.log("-------------------------------------------------")
-      console.log(purchaseRequest.customer)
-      console.log(purchaseRequest.fromAddress)
-      console.log(purchaseRequest.toAddress)
-      console.log(purchaseRequest.requestOrder)
-      console.log(purchaseRequest.items)
       this.purchaseService.getOrder(purchaseRequest).subscribe({
         next: response =>{
-           alert("ok")
+          alert("Your name is: "+ response.customerName + "\nYour code is: "+ response.code);
+          this.cleanForm();
         },
         error: error =>{
            console.log("error is : "+ error.message)
@@ -136,6 +137,13 @@ export class CheckOutComponent implements OnInit {
 
   }
 
+  cleanForm(){
+    this.cartService.orders = [];
+    this.cartService.totalSize.next(0);
+    this.cartService.totalPrice.next(0);
+    this.checkOutParentGroup.reset();
+    this.router.navigateByUrl('/orders')
+  }
 
   similarGroup(event: Event){
     if((<HTMLInputElement>event.target).checked){
@@ -156,13 +164,7 @@ export class CheckOutComponent implements OnInit {
   }
 
 
-  // getCities(){
-  //   this.stateCityService.getAllCities().subscribe(
-  //     data =>{
-  //       this.cities = data
-  //     }
-  //   )
-  // }
+
 
   getCitiesByCode(type: string){
     let code = this.checkOutParentGroup.get(`${type}.state`)?.value;
