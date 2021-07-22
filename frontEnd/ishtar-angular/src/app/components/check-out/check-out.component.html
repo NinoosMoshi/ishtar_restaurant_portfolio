@@ -18,7 +18,7 @@
 
 
     <div  class="input-group mb-3">
-      <input formControlName="gmail" type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
+      <input formControlName="email" type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
       <span class="input-group-text" >@gmail.com</span>
     </div>
 
@@ -35,21 +35,21 @@
 
     <div class="input-group mb-3">
       <span class="input-group-text">Phone Number</span>
-      <input formControlName="phone" type="text" class="form-control"  aria-describedby="basic-addon3">
+      <input formControlName="phoneNumber" type="text" class="form-control"  aria-describedby="basic-addon3">
     </div>
 
-    <div *ngIf="phone?.invalid && (phone?.dirty || phone?.touched)" >
-      <div *ngIf="phone?.errors?.required" class="alert alert-danger" role="alert">
+    <div *ngIf="phoneNumber?.invalid && (phoneNumber?.dirty || phoneNumber?.touched)" >
+      <div *ngIf="phoneNumber?.errors?.required" class="alert alert-danger" role="alert">
         Phone is Required
       </div>
-      <div *ngIf="phone?.errors?.maxlength" class="alert alert-danger" role="alert">
-        Phone must be not more than 11 digit
+      <div *ngIf="phoneNumber?.errors?.maxlength" class="alert alert-danger" role="alert">
+        phoneNumber must be not more than 11 digit
       </div>
-      <div *ngIf="phone?.errors?.minlength"  class="alert alert-danger" role="alert">
-        Phone must be not less than 11 digit
+      <div *ngIf="phoneNumber?.errors?.minlength"  class="alert alert-danger" role="alert">
+        phoneNumber must be not less than 11 digit
       </div>
-      <div *ngIf="phone?.errors?.pattern" class="alert alert-danger" role="alert">
-        Invalid Phone
+      <div *ngIf="phoneNumber?.errors?.pattern" class="alert alert-danger" role="alert">
+        Invalid phoneNumber
       </div>
     </div>
 

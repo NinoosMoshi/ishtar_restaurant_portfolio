@@ -1,3 +1,5 @@
+import { Address } from './../../model/form/address';
+import { Customer } from './../../model/form/customer';
 
 import { CartService } from './../../services/cart.service';
 import { StateCityService } from './../../services/state-city.service';
@@ -45,9 +47,9 @@ export class CheckOutComponent implements OnInit {
                                       SpaceValidator.onlyContainSpace,
                                       Validators.minLength(6)]),
 
-        gmail: new FormControl('',[Validators.required,
+        email: new FormControl('',[Validators.required,
                                    Validators.pattern('^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$') ]),
-        phone: new FormControl('',[
+        phoneNumber: new FormControl('',[
                                     Validators.required,
                                     Validators.minLength(10),
                                     Validators.maxLength(10),
@@ -84,8 +86,8 @@ export class CheckOutComponent implements OnInit {
     return this.checkOutParentGroup.get('data.gmail');
   }
 
-  get phone(){
-    return this.checkOutParentGroup.get('data.phone');
+  get phoneNumber(){
+    return this.checkOutParentGroup.get('data.phoneNumber');
   }
 
 
@@ -94,8 +96,13 @@ export class CheckOutComponent implements OnInit {
       this.checkOutParentGroup.markAllAsTouched();
     }else{
       let customer = this.checkOutParentGroup.controls['data'].value;
+
       let fromAddress = this.checkOutParentGroup.controls['fromPerson'].value;
+      fromAddress.city = fromAddress.city['cityName'];
+
       let toAddress = this.checkOutParentGroup.controls['toPerson'].value;
+      toAddress.city = toAddress.city['cityName'];
+
       let requestOrder = new Request();
       requestOrder.totalPrice = this.totalCheckOutPrice;
       requestOrder.totalQuantity = this.totalCheckOutSize;
@@ -110,14 +117,20 @@ export class CheckOutComponent implements OnInit {
       purchaseRequest.toAddress = toAddress;
       purchaseRequest.requestOrder = requestOrder;
       purchaseRequest.items = items;
-      // this.purchaseService.getOrder(purchaseRequest).subscribe({
-      //   next: response =>{
-
-      //   },
-      //   error: error =>{
-
-      //   }
-      // })
+      console.log("-------------------------------------------------")
+      console.log(purchaseRequest.customer)
+      console.log(purchaseRequest.fromAddress)
+      console.log(purchaseRequest.toAddress)
+      console.log(purchaseRequest.requestOrder)
+      console.log(purchaseRequest.items)
+      this.purchaseService.getOrder(purchaseRequest).subscribe({
+        next: response =>{
+           alert("ok")
+        },
+        error: error =>{
+           console.log("error is : "+ error.message)
+        }
+      })
 
     }
 
