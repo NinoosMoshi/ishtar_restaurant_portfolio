@@ -260,3 +260,4 @@ example <span style="color:red;">USER_ROLE</span> , <span style="color:red;">ADM
 4- create User and Authorities classes<br/>
 5- create relationship between user and authorities<br/>
 ![Getting Started](./img/security-relationship.PNG) <br />
+6- create UserRepository<br/>
