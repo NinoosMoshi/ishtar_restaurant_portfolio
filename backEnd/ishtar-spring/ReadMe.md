@@ -245,5 +245,17 @@ Spring Security<br/>
 3- explain CSRF <br/>
 ![Getting Started](./img/security-config.png) <br />
 ![Getting Started](./img/csrf.png) <br />
+![Getting Started](./img/user_Authority_DB.png) <br />
 
+<h2>GrantedAuthority : </h2>
+it's mean what the user or admin can do(permission).
+example: let's say **user** can just read, the <span style="color:red;">Read is</span> a <span style="color:red;">GrantedAuthority</span>,
+and **admin** can <span style="color:red;">read,write,delete,update</span> these <span style="color:red;">are GrantedAuthority</span>.
+
+
+<h2>Role :</h2>
+example <span style="color:red;">USER_ROLE</span> , <span style="color:red;">ADMIN_ROLE</span> , <span style="color:red;">MANAGER_ROLE</span>
+<br/>
+
+4- create User and Authorities classes<br/>
 
