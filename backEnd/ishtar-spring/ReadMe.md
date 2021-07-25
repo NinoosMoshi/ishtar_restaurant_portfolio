@@ -261,3 +261,26 @@ example <span style="color:red;">USER_ROLE</span> , <span style="color:red;">ADM
 5- create relationship between user and authorities<br/>
 ![Getting Started](./img/security-relationship.PNG) <br />
 6- create UserRepository<br/>
+
+<h2>AuthenticationManagerBuilder</h2>
+is responsible to check (username and password) from login and (username and password) from database.
+
+<h3>setUserDetailsService</h3>
+setUserDetailsService has a service that responsible to retrieve data from the database to make a matches
+
+<h3>UserDetailsService</h3>
+UserDetailsService interface is used in order to lookup the username, password and GrantedAuthorities for any given user.
+
+This interface provide only one method which implementing class need to implement-
+
+<span style="color:gray;">
+ @Override
+    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+        return null;
+    }
+</span>
+<br/>
+
+![Getting Started](./img/authenticationManager.PNG) <br />
+
+
