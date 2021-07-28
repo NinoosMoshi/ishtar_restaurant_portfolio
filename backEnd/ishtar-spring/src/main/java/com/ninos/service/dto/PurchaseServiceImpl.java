@@ -2,7 +2,6 @@ package com.ninos.service.dto;
 
 import com.ninos.dto.PurchaseRequest;
 import com.ninos.dto.PurchaseResponse;
-import com.ninos.model.form.Customer;
 import com.ninos.model.form.Item;
 import com.ninos.model.form.Request;
 import com.ninos.repository.CustomerRepository;
@@ -10,9 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 import java.util.UUID;
 
 

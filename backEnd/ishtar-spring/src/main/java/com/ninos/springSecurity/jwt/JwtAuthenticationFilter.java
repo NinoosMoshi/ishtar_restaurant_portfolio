@@ -2,6 +2,7 @@ package com.ninos.springSecurity.jwt;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
+import com.ninos.dto.security.LoginResponse;
 import com.ninos.dto.security.UserPrincipal;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -38,13 +39,13 @@ public class JwtAuthenticationFilter {
     }
 
 
-     public String login(JwtLogin jwtLogin){
+     public LoginResponse login(JwtLogin jwtLogin){
 
          Authentication authenticate = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(jwtLogin.getEmail(),
                                                                                                                 jwtLogin.getPassword()));
 
          SecurityContextHolder.getContext().setAuthentication(authenticate);
          String token = generateToken(authenticate);
-         return token;
+         return new LoginResponse(jwtLogin.getEmail(), token);
      }
 }

@@ -1,5 +1,6 @@
 package com.ninos.controller;
 
+import com.ninos.dto.security.LoginResponse;
 import com.ninos.springSecurity.jwt.JwtAuthenticationFilter;
 import com.ninos.springSecurity.jwt.JwtLogin;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +20,7 @@ public class UserController {
 
     // http://localhost:8080/signin
     @PostMapping("/signin")
-    public String logIn(@RequestBody JwtLogin jwtLogin){
+    public LoginResponse logIn(@RequestBody JwtLogin jwtLogin){
         return jwtAuthenticationFilter.login(jwtLogin);
     }
 
