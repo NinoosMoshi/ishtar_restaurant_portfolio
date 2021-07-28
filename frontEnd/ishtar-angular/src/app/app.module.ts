@@ -14,6 +14,8 @@ import { CartStatusComponent } from './components/cart-status/cart-status.compon
 import { PurchasesComponent } from './components/purchases/purchases.component';
 import { CheckOutComponent } from './components/check-out/check-out.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './components/login/login.component';
+import { SignupComponent } from './components/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     OrderDetailsComponent,
     CartStatusComponent,
     PurchasesComponent,
-    CheckOutComponent
+    CheckOutComponent,
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,

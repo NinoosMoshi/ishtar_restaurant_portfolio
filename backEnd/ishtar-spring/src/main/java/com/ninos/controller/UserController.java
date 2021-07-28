@@ -17,6 +17,7 @@ public class UserController {
         this.jwtAuthenticationFilter = jwtAuthenticationFilter;
     }
 
+    // http://localhost:8080/signin
     @PostMapping("/signin")
     public String logIn(@RequestBody JwtLogin jwtLogin){
         return jwtAuthenticationFilter.login(jwtLogin);
