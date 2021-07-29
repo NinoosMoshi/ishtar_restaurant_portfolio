@@ -1,15 +1,16 @@
 
 
 .card{
+  margin-top: 95px;
   height: 305px;
   width: 400px;
   background-color: rgba(0,0,0,0.5) !important;
-  margin-bottom: 192px;
 }
 
 
 .input-field{
-  margin-bottom: 20px;
+
+  margin-top: 20px;
 }
 
 .input-field span{
@@ -62,8 +63,6 @@ input:focus{
   margin-right: 5px;
 }
 
-/* facebook #3C66C4 */
-/* google #CF4332 */
 
 .login_btn{
   color: #fff;
@@ -111,9 +110,31 @@ input:focus{
 }
 
 
-.alert
+.emailVal span
 {
   position: absolute;
-  left: 360px;
-  width: 200px;
+  left: 53px;
+  width: 315px;
+  margin-top: -79px;
+  height: 50px;
 }
+
+.passwordVal span
+{
+  position: absolute;
+  left: 53px;
+  width: 315px;
+  margin-top: -20px;
+  height: 50px;
+}
+
+
+.submitVal{
+  margin-top: 25px;
+}
+
+
+
+
+
+

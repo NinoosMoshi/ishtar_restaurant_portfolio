@@ -5,7 +5,8 @@
   height: 515px;
   width: 400px;
   background-color: rgba(0,0,0,0.5) !important;
-  margin-bottom: 63px;
+  margin-bottom: 140px;
+  margin-top: 60px;
 }
 
 .input-field{
@@ -62,8 +63,6 @@ input:focus{
   margin-right: 5px;
 }
 
-/* facebook #3C66C4 */
-/* google #CF4332 */
 
 .login_btn{
   color: #fff;
@@ -112,9 +111,35 @@ input:focus{
 }
 
 
-.alert
+/* .alert
 {
   position: absolute;
   left: 360px;
   width: 200px;
+} */
+
+
+
+
+.emailVal span
+{
+  position: absolute;
+  left: 53px;
+  width: 315px;
+  margin-top: -79px;
+  height: 50px;
+}
+
+.passwordVal span
+{
+  position: absolute;
+  left: 53px;
+  width: 315px;
+  margin-top: -20px;
+  height: 50px;
+}
+
+
+.submitVal{
+  margin-top: 25px;
 }

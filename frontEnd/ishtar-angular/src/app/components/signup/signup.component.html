@@ -1,9 +1,28 @@
+<div *ngIf="email?.invalid && (email?.dirty || email?.touched)" class="emailVal">
+  <span *ngIf="email?.errors?.required || email?.errors?.noSpace" class="alert alert-danger" role="alert">
+    Email Is Required
+  </span>
+  <span *ngIf="email?.errors?.pattern" class="alert alert-danger" role="alert">
+    Invalid Email
+  </span>
+</div>
+
+<div *ngIf="password?.invalid && (password?.dirty || password?.touched)" class="passwordVal">
+  <span *ngIf="password?.errors?.required || password?.errors?.noSpace" class="alert alert-danger" role="alert">
+    Password Is Required
+  </span>
+</div>
+
 
 <div class="container">
+
   <div class="d-flex justify-content-center h-100 myheight">
     <div class="card">
+
+
       <div class="card-header">
         <h3>Sign Up</h3>
+
         <div class="d-flex justify-content-end social_icon">
         </div>
       </div>
@@ -17,14 +36,15 @@
                 </div>
                 <input formControlName="email" type="text" class="form-control" placeholder="email">
 
-                <!-- <div>
-                  <div class="alert alert-danger" role="alert">
+                <!-- <div *ngIf="email?.invalid && (email?.dirty || email?.touched)" class="passwordVal">
+                  <span *ngIf="email?.errors?.required || email?.errors?.noSpace" class="alert alert-danger" role="alert">
                     Email Is Required
-                  </div>
-                  <div  class="alert alert-danger" role="alert">
+                  </span>
+                  <span *ngIf="email?.errors?.pattern" class="alert alert-danger" role="alert">
                     Invalid Email
-                  </div>
+                  </span>
                 </div> -->
+
               </div>
 
               <div class="input-group form-group input-field">
@@ -32,16 +52,19 @@
                   <span class="input-group-text"><i class="fas fa-key"></i></span>
                 </div>
                 <input formControlName="password" type="password" class="form-control" placeholder="password">
-<!--
-                <div>
-                  <div class="alert alert-danger" role="alert">
+
+
+                <!-- <div *ngIf="password?.invalid && (password?.dirty || password?.touched)" class="passwordVal">
+                  <span *ngIf="password?.errors?.required || password?.errors?.noSpace" class="alert alert-danger" role="alert">
                     Password Is Required
-                  </div>
+                  </span>
                 </div> -->
+
+
 
               </div>
 
-              <div class="form-group">
+              <div class="form-group submitVal">
                 <button type="submit" class="btn float-right login_btn">Sign up</button>
               </div>
 
