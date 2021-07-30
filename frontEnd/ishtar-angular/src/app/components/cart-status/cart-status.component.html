@@ -1,3 +1,8 @@
+ <!-- start login button -->
+    <button routerLink="/login" *ngIf="!authenticatedUser()" class="btn btn-primary loginbtn">Login</button>
+    <button (click)="logout()" *ngIf="authenticatedUser()" class="btn btn-danger logoutbtn">Logout</button>
+ <!-- start login button -->
+
 <a routerLink="/purchases">
   <div class="cart-area">
     <a href="#">

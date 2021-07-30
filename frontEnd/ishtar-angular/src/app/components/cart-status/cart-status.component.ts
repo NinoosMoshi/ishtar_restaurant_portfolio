@@ -1,5 +1,7 @@
+import { Router } from '@angular/router';
 import { CartService } from './../../services/cart.service';
 import { Component, OnInit } from '@angular/core';
+import { AuthenticationService } from 'src/app/services/security/authentication.service';
 
 @Component({
   selector: 'app-cart-status',
@@ -11,7 +13,7 @@ export class CartStatusComponent implements OnInit {
   orderSize:number = 0;
   orderPrice:number = 0;
 
-  constructor(private cartService:CartService) { }
+  constructor(private cartService:CartService, private authenticationService: AuthenticationService, private router: Router) { }
 
   ngOnInit(): void {
     this.getCartStatus();
@@ -31,5 +33,22 @@ export class CartStatusComponent implements OnInit {
     }
   )
   }
+
+
+
+
+  authenticatedUser(){
+    return this.authenticationService.isLogin();
+  }
+
+  logout(){
+    this.authenticationService.logOut();
+    this.router.navigateByUrl("/login")
+  }
+
+
+
+
+
 
 }

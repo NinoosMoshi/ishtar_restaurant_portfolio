@@ -30,3 +30,14 @@
   .cart-area i{
   padding-left: 5px;
   }
+
+
+  .loginbtn{
+    position: absolute;
+    margin: 0px 0px 0 -100px;
+  }
+
+  .logoutbtn{
+    position: absolute;
+    margin: 0px 0px 0 -100px;
+  }
