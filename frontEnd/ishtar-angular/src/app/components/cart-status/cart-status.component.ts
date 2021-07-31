@@ -42,6 +42,9 @@ export class CartStatusComponent implements OnInit {
   }
 
   logout(){
+    this.cartService.orders = [];
+    this.cartService.totalSize.next(0);
+    this.cartService.totalPrice.next(0);
     this.authenticationService.logOut();
     this.router.navigateByUrl("/login")
   }
