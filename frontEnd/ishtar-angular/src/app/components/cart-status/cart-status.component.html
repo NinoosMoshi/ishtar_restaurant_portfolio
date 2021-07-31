@@ -1,16 +1,23 @@
- <!-- start login button -->
-    <button routerLink="/login" *ngIf="!authenticatedUser()" class="btn btn-primary loginbtn">Login</button>
-    <button (click)="logout()" *ngIf="authenticatedUser()" class="btn btn-danger logoutbtn">Logout</button>
- <!-- start login button -->
 
-<a routerLink="/purchases">
-  <div class="cart-area">
-    <a href="#">
-      <div>
-          <span>{{orderPrice | currency:'USD'}}</span>
-          <i class="fa fa-shopping-cart" aria-hidden="true"></i> {{orderSize}}
+ <div class="d-flex">
+    <div class="login-logout-btn">
+    <!-- start login button -->
+        <button routerLink="/login" *ngIf="!authenticatedUserStatus()" class="btn btn-primary">Login</button>
+        <button (click)="logout()" *ngIf="authenticatedUserStatus()" class="btn btn-danger">Logout</button>
+    <!-- start login button -->
+    </div>
 
+    <div *ngIf="authenticatedUserStatus()">
+    <a routerLink="/purchases">
+      <div class="cart-area">
+        <a href="#">
+          <div>
+              <span>{{orderPrice | currency:'USD'}}</span>
+              <i class="fa fa-shopping-cart" aria-hidden="true"></i> {{orderSize}}
+
+          </div>
+        </a>
       </div>
     </a>
-  </div>
-</a>
+    </div>
+</div>

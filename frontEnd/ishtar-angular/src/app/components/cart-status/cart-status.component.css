@@ -32,12 +32,13 @@
   }
 
 
-  .loginbtn{
-    position: absolute;
-    margin: 0px 0px 0 -100px;
+  .login-logout-btn{
+   margin-right: 5px;
   }
 
-  .logoutbtn{
-    position: absolute;
-    margin: 0px 0px 0 -100px;
-  }
+  .login-logout-btn button{
+      margin-top: 2px;
+      height: 37px;
+   }
+
+

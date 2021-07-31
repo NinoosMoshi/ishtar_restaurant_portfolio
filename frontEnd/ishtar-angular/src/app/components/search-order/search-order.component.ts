@@ -1,3 +1,4 @@
+import { AuthenticationService } from './../../services/security/authentication.service';
 import { Order } from './../../model/order';
 import { OrderService } from 'src/app/services/order.service';
 import { Component, OnInit } from '@angular/core';
@@ -12,7 +13,7 @@ export class SearchOrderComponent implements OnInit {
 
   orders: Order[] = [];
 
-  constructor(private orderService: OrderService, private router: Router) { }
+  constructor(private orderService: OrderService, private router: Router, private authenticationService: AuthenticationService) { }
 
   ngOnInit(): void {
   }
@@ -21,5 +22,12 @@ export class SearchOrderComponent implements OnInit {
   doSearch(key: string){
       this.router.navigateByUrl(`/orders/${key}`)
   }
+
+
+  authenticatedUserSearch(){
+    return this.authenticationService.isLogin();
+  }
+
+
 
 }

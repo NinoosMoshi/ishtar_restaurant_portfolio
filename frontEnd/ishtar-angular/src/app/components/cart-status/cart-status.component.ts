@@ -37,7 +37,7 @@ export class CartStatusComponent implements OnInit {
 
 
 
-  authenticatedUser(){
+  authenticatedUserStatus(){
     return this.authenticationService.isLogin();
   }
 

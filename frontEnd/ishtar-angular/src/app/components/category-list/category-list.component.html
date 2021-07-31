@@ -1,10 +1,12 @@
-<ul class="list">
+<ul  class="list">
   <li routerLinkActive="active"><a><img src="assets/img/ishtar2.png" style="width:40%"></a></li>
+  <div *ngIf="authenticatedUserCategory()">
   <li routerLinkActive="active"><a routerLink="/orders"><i class="fas fa-home p-1"></i><span>Home</span></a></li>
 
   <li *ngFor="let temp of categories" routerLinkActive="active">
     <a routerLink="category/{{temp.id}}" ><i class="{{temp.categoryLogo}} p-1"></i><span>{{temp.categoryName}}</span></a>
   </li>
+</div>
 </ul>
 
 
