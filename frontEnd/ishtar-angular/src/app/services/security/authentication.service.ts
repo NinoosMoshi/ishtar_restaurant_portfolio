@@ -1,3 +1,4 @@
+import { CookieService } from 'ngx-cookie-service';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -10,13 +11,15 @@ export class AuthenticationService {
 
   private baseURL = "http://localhost:8080";
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private cookie: CookieService) { }
 
   executeAuthentication(email: string, password: string): Observable<any>{
      return this.http.post<any>(`${this.baseURL}/signin`, { email, password }).pipe(
       map(response =>{
         sessionStorage.setItem("email", response.email)
         sessionStorage.setItem("token",`Bearer ${response.token}`)
+        this.cookie.set("email", response.email)
+        this.cookie.set("token",`Bearer ${response.token}`)
        return response;
       } )
     );
@@ -45,6 +48,8 @@ isLogin(){
 logOut(){
     sessionStorage.removeItem('email');
     sessionStorage.removeItem('token');
+    this.cookie.delete("email");
+    this.cookie.delete("token");
 }
 
 

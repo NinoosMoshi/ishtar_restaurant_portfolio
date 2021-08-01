@@ -3,6 +3,7 @@ package com.ninos.controller;
 import com.ninos.dto.security.LoginResponse;
 import com.ninos.model.security.User;
 import com.ninos.repository.AuthoritiesRepository;
+import com.ninos.service.security.AccountResponse;
 import com.ninos.service.security.AuthoritiesService;
 import com.ninos.service.security.UserService;
 import com.ninos.springSecurity.jwt.JwtAuthenticationFilter;
@@ -40,13 +41,21 @@ public class UserController {
 
     // http://localhost:8080/signup
     @PostMapping("/signup")
-    public void createUser(@RequestBody JwtLogin jwtLogin){
-        User user = new User();
-        user.setEmail(jwtLogin.getEmail());
-        user.setPassword(passwordEncoder.encode(jwtLogin.getPassword()));
-        user.setActive(1);
-        user.getAuthorities().add(authoritiesService.getAllAuthorities().get(0));
-        userService.addUser(user);
+    public AccountResponse createUser(@RequestBody JwtLogin jwtLogin){
+        AccountResponse accountResponse = new AccountResponse();
+        boolean result = userService.emailExists(jwtLogin.getEmail());
+        if(result){
+            accountResponse.setResult(0);
+        }else{
+            User user = new User();
+            user.setEmail(jwtLogin.getEmail());
+            user.setPassword(passwordEncoder.encode(jwtLogin.getPassword()));
+            user.setActive(1);
+            user.getAuthorities().add(authoritiesService.getAllAuthorities().get(0));
+            userService.addUser(user);
+            accountResponse.setResult(1);
+        }
+        return accountResponse;
     }
 
 

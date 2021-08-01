@@ -1,3 +1,5 @@
+import { CookieService } from 'ngx-cookie-service';
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -17,6 +19,11 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { HttpInterceptorBasicAuthService } from './services/security/interceptor/http-interceptor-basic-auth.service';
+
+
+
+
+
 
 
 @NgModule({
@@ -41,7 +48,8 @@ import { HttpInterceptorBasicAuthService } from './services/security/interceptor
     ReactiveFormsModule
   ],
   providers: [
-    {provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorBasicAuthService, multi:true}
+    {provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorBasicAuthService, multi:true},
+    CookieService
   ],
   bootstrap: [AppComponent]
 })
