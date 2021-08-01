@@ -17,7 +17,7 @@
         </li>
 
         <!-- ######## Start dropdown-menu ####### -->
-           <app-dropdown-menu></app-dropdown-menu>
+           <app-dropdown-menu *ngIf="authenticatedUserCategory()"></app-dropdown-menu>
         <!-- ######## End dropdown-menu ####### -->
 
         <li class="nav-item">
@@ -46,7 +46,7 @@
 
   <!-- # start side section # -->
    <div class="d-none d-sm-block side">
-      <app-category-list></app-category-list>
+      <app-category-list *ngIf="authenticatedUserCategory()"></app-category-list>
    </div>
 <!-- # End side section # -->
 

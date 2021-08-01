@@ -1,5 +1,6 @@
 import { CookieService } from 'ngx-cookie-service';
 import { Component } from '@angular/core';
+import { AuthenticationService } from './services/security/authentication.service';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,7 @@ export class AppComponent {
   title = 'ishtar-angular';
 
 
- constructor(private cookie: CookieService){}
+ constructor(private cookie: CookieService, private authenticationService: AuthenticationService){}
 
  ngOnInit(): void{
    if(this.isCookie()){
@@ -27,6 +28,12 @@ export class AppComponent {
    }
    return true;
  }
+
+
+ authenticatedUserCategory(){
+  return this.authenticationService.isLogin();
+}
+
 
 
 

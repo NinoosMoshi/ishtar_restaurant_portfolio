@@ -12,7 +12,7 @@ export class CategoryListComponent implements OnInit {
 
   categories: Category[] = [];
 
-  constructor(private categoryService:CategoryService, private authenticationService: AuthenticationService) { }
+  constructor(private categoryService:CategoryService) { }
 
   ngOnInit(): void {
     this.getCategories();
@@ -28,9 +28,6 @@ export class CategoryListComponent implements OnInit {
   }
 
 
-  authenticatedUserCategory(){
-    return this.authenticationService.isLogin();
-  }
 
 
 
