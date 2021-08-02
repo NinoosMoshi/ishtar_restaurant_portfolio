@@ -1,8 +1,10 @@
 package com.ninos.controller;
 
+import com.ninos.dto.mail.RestaurantMail;
 import com.ninos.dto.security.LoginResponse;
 import com.ninos.model.security.User;
 import com.ninos.repository.AuthoritiesRepository;
+import com.ninos.service.mail.MailService;
 import com.ninos.service.security.AccountResponse;
 import com.ninos.service.security.AuthoritiesService;
 import com.ninos.service.security.UserService;
@@ -22,14 +24,16 @@ public class UserController {
     private AuthoritiesRepository authoritiesRepository;
     private PasswordEncoder passwordEncoder;
     private AuthoritiesService authoritiesService;
+    private MailService mailService;
 
     @Autowired
-    public UserController(JwtAuthenticationFilter jwtAuthenticationFilter, UserService userService, AuthoritiesRepository authoritiesRepository, PasswordEncoder passwordEncoder, AuthoritiesService authoritiesService) {
+    public UserController(JwtAuthenticationFilter jwtAuthenticationFilter, UserService userService, AuthoritiesRepository authoritiesRepository, PasswordEncoder passwordEncoder, AuthoritiesService authoritiesService, MailService mailService) {
         this.jwtAuthenticationFilter = jwtAuthenticationFilter;
         this.userService = userService;
         this.authoritiesRepository = authoritiesRepository;
         this.passwordEncoder = passwordEncoder;
         this.authoritiesService = authoritiesService;
+        this.mailService = mailService;
     }
 
     // http://localhost:8080/signin
@@ -50,8 +54,11 @@ public class UserController {
             User user = new User();
             user.setEmail(jwtLogin.getEmail());
             user.setPassword(passwordEncoder.encode(jwtLogin.getPassword()));
-            user.setActive(1);
+            user.setActive(0);
             user.getAuthorities().add(authoritiesService.getAllAuthorities().get(0));
+
+            mailService.sendCodeByMail(new RestaurantMail(jwtLogin.getEmail()));
+
             userService.addUser(user);
             accountResponse.setResult(1);
         }
