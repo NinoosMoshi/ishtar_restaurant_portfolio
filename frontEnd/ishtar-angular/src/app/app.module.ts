@@ -19,6 +19,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { HttpInterceptorBasicAuthService } from './services/security/interceptor/http-interceptor-basic-auth.service';
+import { CodeActivationComponent } from './components/code-activation/code-activation.component';
 
 
 
@@ -38,7 +39,8 @@ import { HttpInterceptorBasicAuthService } from './services/security/interceptor
     PurchasesComponent,
     CheckOutComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    CodeActivationComponent
   ],
   imports: [
     BrowserModule,

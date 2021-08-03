@@ -1,3 +1,4 @@
+import { CodeActivationComponent } from './components/code-activation/code-activation.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { LoginComponent } from './components/login/login.component';
 import { CheckOutComponent } from './components/check-out/check-out.component';
@@ -10,6 +11,7 @@ import { RouteActiveService } from './services/security/canActive/route-active.s
 import { LoginLogoutActiveService } from './services/security/canActive/login-logout-active.service';
 
 const routes: Routes = [
+  {path:'active', component: CodeActivationComponent},          // http://localhost:4200/active
   {path:'login', component: LoginComponent, canActivate:[LoginLogoutActiveService]},                // http://localhost:4200/login
   {path:'signup', component: SignupComponent, canActivate:[LoginLogoutActiveService]},              // http://localhost:4200/signup
   {path:'check-out', component: CheckOutComponent, canActivate:[RouteActiveService]},         // http://localhost:4200/check-out
