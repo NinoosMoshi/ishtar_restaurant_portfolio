@@ -2,6 +2,7 @@ package com.ninos.controller;
 
 import com.ninos.dto.mail.RestaurantMail;
 import com.ninos.dto.security.LoginResponse;
+import com.ninos.model.security.Code;
 import com.ninos.model.security.User;
 import com.ninos.repository.AuthoritiesRepository;
 import com.ninos.service.mail.MailService;
@@ -10,6 +11,7 @@ import com.ninos.service.security.AuthoritiesService;
 import com.ninos.service.security.UserService;
 import com.ninos.springSecurity.jwt.JwtAuthenticationFilter;
 import com.ninos.springSecurity.jwt.JwtLogin;
+import com.ninos.util.UserCode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -25,6 +27,7 @@ public class UserController {
     private PasswordEncoder passwordEncoder;
     private AuthoritiesService authoritiesService;
     private MailService mailService;
+    private UserCode userCode = new UserCode();
 
     @Autowired
     public UserController(JwtAuthenticationFilter jwtAuthenticationFilter, UserService userService, AuthoritiesRepository authoritiesRepository, PasswordEncoder passwordEncoder, AuthoritiesService authoritiesService, MailService mailService) {
@@ -51,14 +54,18 @@ public class UserController {
         if(result){
             accountResponse.setResult(0);
         }else{
+            String myCode = userCode.getCode();
             User user = new User();
             user.setEmail(jwtLogin.getEmail());
             user.setPassword(passwordEncoder.encode(jwtLogin.getPassword()));
             user.setActive(0);
             user.getAuthorities().add(authoritiesService.getAllAuthorities().get(0));
 
-            mailService.sendCodeByMail(new RestaurantMail(jwtLogin.getEmail()));
-
+            RestaurantMail restaurantMail = new RestaurantMail(jwtLogin.getEmail(), myCode);
+            mailService.sendCodeByMail(restaurantMail);
+            Code code = new Code();
+            code.setCode(myCode);
+            user.setCode(code);
             userService.addUser(user);
             accountResponse.setResult(1);
         }

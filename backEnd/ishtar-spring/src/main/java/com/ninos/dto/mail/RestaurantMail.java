@@ -7,4 +7,5 @@ import lombok.Data;
 @AllArgsConstructor
 public class RestaurantMail {
     private String to;
+    private String code;
 }

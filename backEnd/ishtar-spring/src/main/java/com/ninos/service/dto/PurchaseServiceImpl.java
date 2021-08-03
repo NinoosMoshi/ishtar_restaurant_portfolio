@@ -5,25 +5,24 @@ import com.ninos.dto.PurchaseResponse;
 import com.ninos.model.form.Item;
 import com.ninos.model.form.Request;
 import com.ninos.repository.CustomerRepository;
-import com.ninos.util.Code;
+import com.ninos.util.UserCode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-import java.util.UUID;
+
 
 
 @Service
 public class PurchaseServiceImpl implements PurchaseService{
 
     private CustomerRepository customerRepository;
-    private Code code;
+    private UserCode userCode = new UserCode();
 
     @Autowired
-    public PurchaseServiceImpl(CustomerRepository customerRepository, Code code) {
+    public PurchaseServiceImpl(CustomerRepository customerRepository) {
         this.customerRepository = customerRepository;
-        this.code = code;
     }
 
     @Transactional
@@ -32,8 +31,8 @@ public class PurchaseServiceImpl implements PurchaseService{
         /* #1 get all Request Order */
         Request requestOrder = purchaseRequest.getRequestOrder();
         
-        /* #2 get a code randomly from UUID*/
-        String myCode = code.getCode();
+        /* #2 get a userCode randomly from UUID*/
+        String myCode = userCode.getCode();
         requestOrder.setCode(myCode);
 
         /* #3 note: OneToMany or ManyToOne or ManyToMany, in these cases we have to set from both sides*/
