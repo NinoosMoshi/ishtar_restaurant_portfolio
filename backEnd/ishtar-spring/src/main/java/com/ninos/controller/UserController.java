@@ -2,6 +2,7 @@ package com.ninos.controller;
 
 import com.ninos.dto.mail.RestaurantMail;
 import com.ninos.dto.security.LoginResponse;
+import com.ninos.dto.security.UserActive;
 import com.ninos.model.security.Code;
 import com.ninos.model.security.User;
 import com.ninos.repository.AuthoritiesRepository;
@@ -71,6 +72,25 @@ public class UserController {
         }
         return accountResponse;
     }
+
+
+
+
+    //http://localhost:8080/active
+    @PostMapping("/active")
+    public UserActive getActiveUser(@RequestBody JwtLogin jwtLogin){
+        String enPassword = userService.getPasswordByEmail(jwtLogin.getEmail());
+        boolean result = passwordEncoder.matches(jwtLogin.getPassword(),enPassword);
+        UserActive userActive = new UserActive();
+        if(result){
+            int act = userService.getUserActive(jwtLogin.getEmail());
+            userActive.setActive(act);
+        }else{
+            userActive.setActive(-1); // -1 meaning the password that user entered is not correct
+        }
+        return userActive;
+    }
+
 
 
 

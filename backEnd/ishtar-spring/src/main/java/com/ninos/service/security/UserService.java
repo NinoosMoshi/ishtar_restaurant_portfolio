@@ -41,5 +41,14 @@ public class UserService implements UserDetailsService {
     }
 
 
+    @Transactional  // we add @Transactional to manage our session
+    public int getUserActive(String email){
+        return userRepository.getActive(email);
+    }
+
+    @Transactional
+    public String getPasswordByEmail(String email){
+        return userRepository.getPasswordByEmail(email);
+    }
 
 }
