@@ -48,15 +48,27 @@ export class LoginComponent implements OnInit {
        return;
     }
 
-     this.authenticationService.executeAuthentication(this.formParentGroup.controls['user'].value.email,
-                                                      this.formParentGroup.controls['user'].value.password).subscribe({
-       next: response =>{
+    this.authenticationService.userActive(
+      this.formParentGroup.controls['user'].value.email,
+      this.formParentGroup.controls['user'].value.password
+    ).subscribe({
+      next: response =>{
+        let ac = response.active;
+        if(ac == 1){
+          this.authenticationService.executeAuthentication(this.formParentGroup.controls['user'].value.email,
+          this.formParentGroup.controls['user'].value.password).subscribe({
+          next: response =>{
           this.router.navigateByUrl("/orders")
-       },
-       error: err =>{
-           alert("Invalid Credentails")
-       }
-     })
+           }
+          })
+        }else if(ac == 0) {
+           this.router.navigateByUrl("/active")
+        }else{
+          alert("Invalid Credentails")
+        }
+      }
+    })
+
   }
 
 
