@@ -97,6 +97,7 @@ public class UserController {
     //http://localhost:8080/activated
     @PostMapping("/activated")
     public AccountResponse activeAccount(@RequestBody ActiveAccount activeAccount){
+
          User user = userService.getUserByMail(activeAccount.getEmail());
          AccountResponse accountResponse = new AccountResponse();
          if (user.getCode().getCode().equals(activeAccount.getCode())){
