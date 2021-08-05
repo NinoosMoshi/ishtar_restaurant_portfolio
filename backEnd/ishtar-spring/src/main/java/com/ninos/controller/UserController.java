@@ -99,7 +99,6 @@ public class UserController {
     public AccountResponse activeAccount(@RequestBody ActiveAccount activeAccount){
          User user = userService.getUserByMail(activeAccount.getEmail());
          AccountResponse accountResponse = new AccountResponse();
-
          if (user.getCode().getCode().equals(activeAccount.getCode())){
              user.setActive(1);
              userService.editUser(user);
