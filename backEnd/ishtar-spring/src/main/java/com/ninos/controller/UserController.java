@@ -1,6 +1,7 @@
 package com.ninos.controller;
 
 import com.ninos.dto.mail.RestaurantMail;
+import com.ninos.dto.security.ActiveAccount;
 import com.ninos.dto.security.LoginResponse;
 import com.ninos.dto.security.UserActive;
 import com.ninos.model.security.Code;
@@ -89,6 +90,24 @@ public class UserController {
             userActive.setActive(-1); // -1 meaning the password that user entered is not correct
         }
         return userActive;
+    }
+
+
+
+    //http://localhost:8080/activated
+    @PostMapping("/activated")
+    public AccountResponse activeAccount(@RequestBody ActiveAccount activeAccount){
+         User user = userService.getUserByMail(activeAccount.getEmail());
+         AccountResponse accountResponse = new AccountResponse();
+
+         if (user.getCode().getCode().equals(activeAccount.getCode())){
+             user.setActive(1);
+             userService.editUser(user);
+              accountResponse.setResult(1);
+         }else {
+              accountResponse.setResult(0);
+         }
+         return  accountResponse;
     }
 
 

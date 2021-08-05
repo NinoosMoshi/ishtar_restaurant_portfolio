@@ -30,7 +30,7 @@ public class UserService implements UserDetailsService {
     }
 
 
-    @Transactional
+
     public void addUser(User user){
         userRepository.save(user);
     }
@@ -49,6 +49,15 @@ public class UserService implements UserDetailsService {
     @Transactional
     public String getPasswordByEmail(String email){
         return userRepository.getPasswordByEmail(email);
+    }
+
+
+    public User getUserByMail(String mail){
+        return userRepository.findUserByEmail(mail);
+    }
+
+    public void editUser(User user){
+        userRepository.save(user);
     }
 
 }

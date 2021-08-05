@@ -3,7 +3,7 @@ package com.ninos.util;
 import java.util.UUID;
 
 public class UserCode {
-    public String getCode() {
+    public static String getCode() {
         return UUID.randomUUID().toString() ;
     }
 }
