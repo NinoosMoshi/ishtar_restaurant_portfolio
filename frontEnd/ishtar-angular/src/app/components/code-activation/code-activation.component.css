@@ -87,7 +87,8 @@ input:focus{
 .alert
 {
   position: absolute;
-  left: 360px;
+  right: 185px;
+  margin-top: -186px;
   width: 200px;
 }
 

@@ -35,6 +35,13 @@ export class AuthenticationService {
  }
 
 
+activeAccount(email:string, code:string):Observable<any>{
+  return this.http.post<any>(`${this.baseURL}/activated`, {email, code}).pipe(
+    map(response => response)
+  );
+}
+
+
 
   createUser(email: string, password: string): Observable<any>{
     return this.http.post<any>(`${this.baseURL}/signup`, { email, password }).pipe(

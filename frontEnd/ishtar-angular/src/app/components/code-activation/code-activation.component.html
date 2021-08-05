@@ -4,7 +4,7 @@
     <div class="card mycard">
       <div class="card-header">
         <h3 class="must">Must Active Your Account</h3>
-        <p class="email-act">({{emailactive}})</p>
+        <p class="email-act">({{email}})</p>
         <div class="d-flex justify-content-end social_icon">
         </div>
       </div>
@@ -18,7 +18,7 @@
               <input formControlName="code" type="text" class="form-control" placeholder="code">
               <div *ngIf="code?.invalid && (code?.dirty || code?.touched)">
                 <div *ngIf="code?.errors?.required || code?.errors?.noSpace" class="alert alert-danger" role="alert">
-                  Email Is Required
+                  Code Is Required
                 </div>
               </div>
             </div>
