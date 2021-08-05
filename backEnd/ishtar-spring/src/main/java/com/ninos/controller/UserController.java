@@ -53,7 +53,7 @@ public class UserController {
         AccountResponse accountResponse = new AccountResponse();
         boolean result = userService.emailExists(jwtLogin.getEmail());
         if(result){
-            accountResponse.setResult(0);
+            accountResponse.setResult(0);    // email is exists in database
         }else{
             String myCode = userCode.getCode();
             User user = new User();
@@ -68,7 +68,7 @@ public class UserController {
             code.setCode(myCode);
             user.setCode(code);
             userService.addUser(user);
-            accountResponse.setResult(1);
+            accountResponse.setResult(1);  // email is not exists in database, therefore will create new account
         }
         return accountResponse;
     }

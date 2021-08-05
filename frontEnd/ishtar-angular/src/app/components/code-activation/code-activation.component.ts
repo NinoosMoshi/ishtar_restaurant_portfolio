@@ -11,9 +11,12 @@ export class CodeActivationComponent implements OnInit {
 
   formParentGroup!: FormGroup;
 
+  emailactive:string = "";
+
   constructor(private formChildGroup: FormBuilder) { }
 
   ngOnInit(): void {
+    this.emailactive = sessionStorage.getItem("emailActive")!;
   }
 
 
