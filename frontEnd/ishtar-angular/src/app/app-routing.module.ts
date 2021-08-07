@@ -9,9 +9,11 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { RouteActiveService } from './services/security/canActive/route-active.service';
 import { LoginLogoutActiveService } from './services/security/canActive/login-logout-active.service';
+import { AccountService } from './services/security/canActive/account.service';
+
 
 const routes: Routes = [
-  {path:'active', component: CodeActivationComponent},          // http://localhost:4200/active
+  {path:'active', component: CodeActivationComponent, canActivate:[LoginLogoutActiveService,AccountService]},          // http://localhost:4200/active
   {path:'login', component: LoginComponent, canActivate:[LoginLogoutActiveService]},                // http://localhost:4200/login
   {path:'signup', component: SignupComponent, canActivate:[LoginLogoutActiveService]},              // http://localhost:4200/signup
   {path:'check-out', component: CheckOutComponent, canActivate:[RouteActiveService]},         // http://localhost:4200/check-out
