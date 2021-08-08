@@ -1,3 +1,4 @@
+import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 import { CodeActivationComponent } from './components/code-activation/code-activation.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { LoginComponent } from './components/login/login.component';
@@ -13,6 +14,7 @@ import { AccountService } from './services/security/canActive/account.service';
 
 
 const routes: Routes = [
+  {path:'reset', component: ResetPasswordComponent},   // http://localhost:4200/reset
   {path:'active', component: CodeActivationComponent, canActivate:[LoginLogoutActiveService,AccountService]},          // http://localhost:4200/active
   {path:'login', component: LoginComponent, canActivate:[LoginLogoutActiveService]},                // http://localhost:4200/login
   {path:'signup', component: SignupComponent, canActivate:[LoginLogoutActiveService]},              // http://localhost:4200/signup

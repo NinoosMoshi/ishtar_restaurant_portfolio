@@ -20,6 +20,7 @@ import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { HttpInterceptorBasicAuthService } from './services/security/interceptor/http-interceptor-basic-auth.service';
 import { CodeActivationComponent } from './components/code-activation/code-activation.component';
+import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 
 
 
@@ -40,7 +41,8 @@ import { CodeActivationComponent } from './components/code-activation/code-activ
     CheckOutComponent,
     LoginComponent,
     SignupComponent,
-    CodeActivationComponent
+    CodeActivationComponent,
+    ResetPasswordComponent
   ],
   imports: [
     BrowserModule,
