@@ -10,11 +10,14 @@ import { SpaceValidator } from 'src/app/model/space-validator';
 export class ResetPasswordComponent implements OnInit {
 
   formParentGroup!: FormGroup;
+  formParentGroupReset!: FormGroup;
+  enableFrom: boolean = true;
 
   constructor(private formChildGroup: FormBuilder) { }
 
   ngOnInit(): void {
     this.mySignupForm();
+    this.mySignupFormReset();
   }
 
 
@@ -29,6 +32,28 @@ export class ResetPasswordComponent implements OnInit {
     })
   }
 
+
+  mySignupFormReset(){
+    this.formParentGroupReset = this.formChildGroup.group({
+      newUser: this.formChildGroup.group({
+        code: new FormControl('',[Validators.required,
+                                  SpaceValidator.onlyContainSpace]),
+        password: new FormControl('', [Validators.required])
+      })
+
+    })
+
+  }
+
+  get code(){
+    return this.formParentGroupReset.get('newUser.code')
+  }
+
+  get password(){
+    return this.formParentGroupReset.get('newUser.password')
+  }
+
+
   get email(){
     return this.formParentGroup.get('user.email')
   }
@@ -41,5 +66,19 @@ export class ResetPasswordComponent implements OnInit {
       return;
     }
   }
+
+
+
+  resetNewPassword(){
+    if(this.formParentGroupReset.invalid){
+      this.formParentGroupReset.markAllAsTouched();
+      return;
+    }
+  }
+
+
+
+
+
 
 }
