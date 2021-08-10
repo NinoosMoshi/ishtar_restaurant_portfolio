@@ -41,6 +41,18 @@ activeAccount(email:string, code:string):Observable<any>{
   );
 }
 
+checkEmail(email:string):Observable<any>{
+  return this.http.post<any>(`${this.baseURL}/check-email`, {email}).pipe(
+    map(response => response)
+  );
+}
+
+resetPassword(email:string, password: string, code:string):Observable<any>{
+  return this.http.post<any>(`${this.baseURL}/resetPassword`, {email,password,code}).pipe(
+    map(response => response)
+  );
+}
+
 
 
   createUser(email: string, password: string): Observable<any>{
