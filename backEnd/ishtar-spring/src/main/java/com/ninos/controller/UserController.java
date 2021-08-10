@@ -3,6 +3,7 @@ package com.ninos.controller;
 import com.ninos.dto.mail.RestaurantMail;
 import com.ninos.dto.security.ActiveAccount;
 import com.ninos.dto.security.LoginResponse;
+import com.ninos.dto.security.NewPassword;
 import com.ninos.dto.security.UserActive;
 import com.ninos.model.security.Code;
 import com.ninos.model.security.User;
@@ -126,6 +127,25 @@ public class UserController {
             accountResponse.setResult(0);
         }
         return accountResponse;
+    }
+
+
+    @PostMapping("/resetPassword")
+    public AccountResponse resetPassword(@RequestBody NewPassword newPassword){
+        AccountResponse accountResponse = new AccountResponse();
+        User user = userService.getUserByMail(newPassword.getEmail());
+        if(user != null){
+            if(user.getCode().getCode().equals(newPassword.getCode())){
+                user.setPassword(passwordEncoder.encode(newPassword.getPassword()));
+                userService.editUser(user);
+                accountResponse.setResult(1);
+            }else {
+                accountResponse.setResult(0);
+            }
+        }else{
+            accountResponse.setResult(0);
+        }
+          return accountResponse;
     }
 
 
