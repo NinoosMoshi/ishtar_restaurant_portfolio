@@ -113,11 +113,14 @@ public class UserController {
     //http://localhost:8080/check-email
     @PostMapping("/check-email")
     public AccountResponse resetPasswordEmail(@RequestBody LoginResponse loginResponse){
-        boolean result = userService.emailExists(loginResponse.getEmail());
         AccountResponse accountResponse = new AccountResponse();
-        if (result){
-            RestaurantMail restaurantMail = new RestaurantMail(loginResponse.getEmail(), UserCode.getCode());
+        User user = userService.getUserByMail(loginResponse.getEmail());
+        if (user != null){
+            String code = UserCode.getCode();
+            RestaurantMail restaurantMail = new RestaurantMail(loginResponse.getEmail(), code);
             mailService.sendCodeByMail(restaurantMail);
+            user.getCode().setCode(code);
+            userService.editUser(user);
             accountResponse.setResult(1);
         }else{
             accountResponse.setResult(0);
