@@ -11,7 +11,7 @@ export class ResetPasswordComponent implements OnInit {
 
   formParentGroup!: FormGroup;
   formParentGroupReset!: FormGroup;
-  enableFrom: boolean = true;
+  enableFrom: boolean = false;
 
   constructor(private formChildGroup: FormBuilder) { }
 

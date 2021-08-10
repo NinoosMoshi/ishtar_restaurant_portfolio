@@ -110,6 +110,20 @@ public class UserController {
     }
 
 
+    //http://localhost:8080/check-email
+    @PostMapping("/check-email")
+    public AccountResponse resetPasswordEmail(@RequestBody LoginResponse loginResponse){
+        boolean result = userService.emailExists(loginResponse.getEmail());
+        AccountResponse accountResponse = new AccountResponse();
+        if (result){
+            RestaurantMail restaurantMail = new RestaurantMail(loginResponse.getEmail(), UserCode.getCode());
+            mailService.sendCodeByMail(restaurantMail);
+            accountResponse.setResult(1);
+        }else{
+            accountResponse.setResult(0);
+        }
+        return accountResponse;
+    }
 
 
 }
