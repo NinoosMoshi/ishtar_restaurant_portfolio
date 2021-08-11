@@ -34,14 +34,6 @@
                   <span class="input-group-text"><i class="fas fa-user"></i></span>
                 </div>
                 <input formControlName="email" type="text" class="form-control" placeholder="email">
-                <!-- <div *ngIf="email?.invalid && (email?.dirty || email?.touched)">
-                  <div *ngIf="email?.errors?.required || email?.errors?.noSpace" class="alert alert-danger" role="alert">
-                    Email Is Required
-                  </div>
-                  <div *ngIf="email?.errors?.pattern" class="alert alert-danger" role="alert">
-                    Invalid Email
-                  </div>
-                </div> -->
 
               </div>
 
@@ -50,11 +42,6 @@
                   <span class="input-group-text"><i class="fas fa-key"></i></span>
                 </div>
                 <input formControlName="password" type="password" class="form-control" placeholder="password">
-                <!-- <div *ngIf="password?.invalid && (password?.dirty || password?.touched)">
-                  <div *ngIf="password?.errors?.required || password?.errors?.noSpace" class="alert alert-danger" role="alert">
-                    Password Is Required
-                  </div>
-                </div> -->
 
               </div>
 
@@ -69,11 +56,11 @@
               </div>
 
               <div class="form-group">
-                <button type="submit" class="btn float-right google_btn"><i class="fab fa-google"></i>Login via Google</button>
+                <button (click)="signInWithGoogle()" type="submit" class="btn float-right google_btn"><i class="fab fa-google"></i>Login via Google</button>
               </div>
 
               <div class="form-group">
-                <button type="submit" class="btn float-right facebook_btn"><i class="fab fa-facebook-f"></i>Login via Facebook</button>
+                <button (click)="signInWithFB()" type="submit" class="btn float-right facebook_btn"><i class="fab fa-facebook-f"></i>Login via Facebook</button>
               </div>
 
         </div>

@@ -21,6 +21,8 @@ import { SignupComponent } from './components/signup/signup.component';
 import { HttpInterceptorBasicAuthService } from './services/security/interceptor/http-interceptor-basic-auth.service';
 import { CodeActivationComponent } from './components/code-activation/code-activation.component';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
+import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
+import {GoogleLoginProvider,FacebookLoginProvider} from 'angularx-social-login';
 
 
 
@@ -49,11 +51,32 @@ import { ResetPasswordComponent } from './components/reset-password/reset-passwo
     AppRoutingModule,
     HttpClientModule,
     NgbPaginationModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SocialLoginModule
   ],
   providers: [
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider(
+              '846938154013-of6iv1dnuv4q0mdefq3cncfqovlj9ug0.apps.googleusercontent.com'
+            )
+          },
+          {
+            id: FacebookLoginProvider.PROVIDER_ID,
+            provider: new FacebookLoginProvider('1450989635281243')
+          }
+        ]
+      } as SocialAuthServiceConfig,
+    },
+
     {provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorBasicAuthService, multi:true},
-    CookieService
+    CookieService,
+
   ],
   bootstrap: [AppComponent]
 })
