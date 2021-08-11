@@ -86,6 +86,14 @@ public class UserController {
         UserActive userActive = new UserActive();
         if(result){
             int act = userService.getUserActive(jwtLogin.getEmail());
+            if(act == 0){   // mean it's not active
+                String code = UserCode.getCode();
+                RestaurantMail restaurantMail = new RestaurantMail(jwtLogin.getEmail(), code);
+                mailService.sendCodeByMail(restaurantMail);
+                User user = userService.getUserByMail(jwtLogin.getEmail());
+                user.getCode().setCode(code);
+                userService.editUser(user);
+            }
             userActive.setActive(act);
         }else{
             userActive.setActive(-1); // -1 meaning the password that user entered is not correct
